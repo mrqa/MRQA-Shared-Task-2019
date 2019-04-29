@@ -117,15 +117,35 @@ Note that it is permissible to download the original datasets and use them as yo
 
 ## Visualization
 
-To view examples in the terminal run:
+To view examples in the terminal please install `requirements.txt` (`pip install requirements.txt`) and then run:
 ```
-python utils/visualize.py example.jsonl.gz
-```
-
-You can also pass a URL instead of a local path. For example:
-
-```
-python utils/visualize.py https://s3.us-east-2.amazonaws.com/mrqa/data/test/ATIS.train.jsonl.gz
+python utils/visualize.py path/or/url
 ```
 
-All of the dataset names and their AWS paths are in `manifest.json`.  By default `visualize.py` will select `50` random examples (set with `--samples N`). If you hit `cntrl-C` it will quick and print the progress up until that point.
+The script argument may be either a URL or a local file path. For example:
+
+```
+python utils/visualize.py https://s3.us-east-2.amazonaws.com/mrqa/data/train/SQuAD.jsonl.gz
+```
+
+## Evaluation
+
+Answers are evaluated using exact match and token-level F1 metrics. The `mrqa_official_eval.py` script is used to evaluate predictions on a given dataset:
+
+```
+python mrqa_official_eval.py <url_or_filename> <predictions_file>
+```
+
+The predictions file must be a valid JSON file of `qid`, `answer` pairs:
+
+```
+{
+  "qid_1": "answer span text 1",
+  ...
+  "qid_n": "answer span text N"
+}
+```
+
+## Baseline Model
+
+An implementation of a simple multi-task BERT-based baseline model is available in the `baseline` directory. 
