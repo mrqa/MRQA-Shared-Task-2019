@@ -40,6 +40,10 @@ The following datasets have been selected for training:
 | [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/HotpotQA.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
 | [NaturalQuestions](https://ai.google/research/pubs/pub47761) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/NaturalQuestions.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
 
+### Out-of-Domain
+
+*Out-of-domain data will be released at a future date.*
+
 ## Download Scripts
 
 We have provided a convenience script to download all of the training and development data (that is released).
