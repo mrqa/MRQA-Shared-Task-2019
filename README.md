@@ -100,8 +100,7 @@ The general format is:
         },
         ...
       ],
-      "answers": [<raw_text_1>, ..., <raw_text_m>],
-      "is_impossible": <has_no_answer>
+      "answers": [<raw_text_1>, ..., <raw_text_m>]
     },
     ...
   ]
