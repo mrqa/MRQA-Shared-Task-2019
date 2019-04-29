@@ -2,30 +2,25 @@
 
 ### Setting up a virtual environment
 
-1.  First, clone the repository:
+1.  Change your directory to this one:
 
     ```
-    git clone https://github.com/alontalmor/MRQA_BERTBaseline.git
+    cd baseline
     ```
 
-2.  Change your directory to where you cloned the files:
-
-    ```
-    cd MRQA_BERTBaseline
-    ```
-
-3.  Create a virtual environment with Python 3.6 or above:
+2.  Create a virtual environment with Python 3.6 or above:
 
     ```
     virtualenv venv --python=python3.7
     ```
 
-4.  Activate the virtual environment. You will need to activate the venv environment in each terminal in which you want to use WebAsKB.
-
+3.  Activate the virtual environment.
+    
     ```
     source venv/bin/activate (or source venv/bin/activate.csh)
     ```
-5.  Install the required dependencies:
+
+4.  Install the required dependencies:
 
     ```
     pip3 install -r requirements.txt
@@ -33,7 +28,7 @@
 
 ### Data
 
-The allennlp caching infra is used, so be sure to have enough disk space, and control the cache directory using ALLENNLP_CACHE_ROOT env variable.
+The allennlp caching infra is used, so be sure to have enough disk space, and control the cache directory using `ALLENNLP_CACHE_ROOT` env variable.
 
 
 ## Training
@@ -55,7 +50,7 @@ The allennlp caching infra is used, so be sure to have enough disk space, and co
  
  `python predict.py https://s3.us-east-2.amazonaws.com/mrqa/models/BERT/_MIX_6.tar.gz https://s3.us-east-2.amazonaws.com/mrqa/data/dev/SQuAD.jsonl.gz pred-output.json`
  
- With gpu device:
+ With GPU device:
  `python predict.py https://s3.us-east-2.amazonaws.com/mrqa/models/BERT/_MIX_6.tar.gz https://s3.us-east-2.amazonaws.com/mrqa/data/dev/SQuAD.jsonl.gz pred-output.json --cuda_device 0`
  
  
