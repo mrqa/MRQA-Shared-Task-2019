@@ -14,7 +14,17 @@ Each participant will submit a single QA system trained on the provided training
 
 This repository contains resources for accessing the official training and development data.
 
-## Training Data
+### Quick Links
+
+- [Datasets](#datasets)
+- [Download](#download-scripts)
+- [Format](#dataset-format)
+- [Visualize](#visualization)
+- [Evaluate](#evaluation)
+- [Baseline](#baseline-model)
+
+## Datasets
+### Training Data
 
 The following datasets have been selected for training:
 
@@ -27,9 +37,9 @@ The following datasets have been selected for training:
 | [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/HotpotQA.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
 | [NaturalQuestions](https://ai.google/research/pubs/pub47761) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/NaturalQuestions.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
 
-## Development Data
+### Development Data
 
-### In-Domain
+#### In-Domain
 
 | Dataset | Download | MD5SUM | Examples |
 | :-----: | :-------:| :----: | :------: |
@@ -40,7 +50,7 @@ The following datasets have been selected for training:
 | [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/HotpotQA.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
 | [NaturalQuestions](https://ai.google/research/pubs/pub47761) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/NaturalQuestions.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
 
-### Out-of-Domain
+#### Out-of-Domain
 
 *Out-of-domain data will be released at a future date.*
 
@@ -145,6 +155,8 @@ The predictions file must be a valid JSON file of `qid`, `answer` pairs:
   "qid_n": "answer span text N"
 }
 ```
+
+The final score for the MRQA shared task will be the macro-average across all test datasets.
 
 ## Baseline Model
 
