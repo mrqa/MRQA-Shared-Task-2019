@@ -1,4 +1,4 @@
-# MRQA Shared Task on Extractive Question Answering 2019
+# MRQA Shared Task on Extractive Question Answering
 
 ## Overview
 
