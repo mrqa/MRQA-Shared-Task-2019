@@ -70,7 +70,7 @@ To download the development data of the training datasets (in-domain), run:
 
 *Out-of-domain data will be released at a future date.*
 
-## Dataset Format
+## MRQA Format
 
 All of the datasets for this task have been adapted to follow a unified format. They are stored a compressed JSONL files (`.jsonl.gz`).
 
