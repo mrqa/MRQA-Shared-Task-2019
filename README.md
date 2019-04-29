@@ -65,9 +65,9 @@ The general format is:
 - **question:** The raw text of the question.
 - **question_tokens:** A tokenized version of the question. The tokenizer and token format is the same as for the context.
 - **detected_answers:** A list of answer spans for the given question that index into the context. For some datasets these spans have been automatically detected using searching heuristics. For any given answer, it may appear multiple times in the text --- each of these occurrences is given. For example, if `42` is the answer, the context, "The answer is <42>. <42> is the answer.", has two occurences. During training, an acceptable stategy might be to pick the first occurrence of the first answer.
--- **text:** The raw text of the detected answer.
--- **char_spans:** Inclusive `[start, end]` character spans (indexing into the raw context).
--- **token_spans:** Inclusive `[start, end]` token spans (indexing into the tokenized context).
+  - **text:** The raw text of the detected answer.
+  - **char_spans:** Inclusive `[start, end]` character spans (indexing into the raw context).
+  - **token_spans:** Inclusive `[start, end]` token spans (indexing into the tokenized context).
 - **answers:** All accepted answer to the question, whether or not there is an exact match in the given context.
 
 
