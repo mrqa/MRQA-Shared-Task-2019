@@ -24,6 +24,13 @@ This repository contains resources for accessing the official training and devel
 - [Baseline](#baseline-model)
 
 ## Datasets
+
+We have adapted several existing datasets from their original formats and settings to conform to our unified extractive setting. Most notably:
+
+- We provide only a single, length-limited context.
+- There are no unanswerable or non-span answer questions.
+- All questions have at least one accepted answer that is found exactly in the context.
+
 ### Training Data
 
 The following datasets have been selected for training:
@@ -117,7 +124,7 @@ Note that it is permissible to download the original datasets and use them as yo
 - **qid:** A unique identifier for the question. The `qid` is unique across all datasets.
 - **question:** The raw text of the question.
 - **question_tokens:** A tokenized version of the question. The tokenizer and token format is the same as for the context.
-- **detected_answers:** A list of answer spans for the given question that index into the context. For some datasets these spans have been automatically detected using searching heuristics. For any given answer, it may appear multiple times in the text --- each of these occurrences is given. For example, if `42` is the answer, the context, "The answer is <42>. <42> is the answer.", has two occurences. During training, an acceptable stategy might be to pick the first occurrence of the first answer.
+- **detected_answers:** A list of answer spans for the given question that index into the context. For some datasets these spans have been automatically detected using searching heuristics. For any given answer, it may appear multiple times in the text --- each of these occurrences is given. For example, if `42` is the answer, the context `"The answer is <42>. <42> is the answer."`, has two occurences.
   - **text:** The raw text of the detected answer.
   - **char_spans:** Inclusive `[start, end]` character spans (indexing into the raw context).
   - **token_spans:** Inclusive `[start, end]` token spans (indexing into the tokenized context).
