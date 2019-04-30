@@ -44,7 +44,6 @@ A span is judged to be an exact match if it matches the answer string after perf
 | :-----: | :-------:| :----: | :------: |
 | [SQuAD](https://arxiv.org/abs/1606.05250) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/train/SQuAD.jsonl.gz) | 67afd110c0ad9860c4e88f16a44cd44c | 86,588 |
 | [NewsQA](https://arxiv.org/abs/1611.09830) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/train/NewsQA.jsonl.gz) | d8288b5de5bd10fb42ce5291ef0f7fbe | 74,160 |
-| [TriviaQA Unfiltered](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/train/TriviaQA-unfilt.jsonl.gz) | 659368c754f8a6fca695a27c38027061 | 65,060 |
 | [TriviaQA Web](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/train/TriviaQA-web.jsonl.gz) | 1d198c0cd60e4d91130e2a2545eb9122 | 61,688 |
 | [SearchQA](https://arxiv.org/abs/1704.05179) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/train/SearchQA.jsonl.gz) | fa9c8c6b2f24e4f410cba81ef63ea284 | 117,384 |
 | [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/train/HotpotQA.jsonl.gz) | 53e65212b46c74a6ee95e83817443db1 | 72,912 |
@@ -58,7 +57,6 @@ A span is judged to be an exact match if it matches the answer string after perf
 | :-----: | :-------:| :----: | :------: |
 | [SQuAD](https://arxiv.org/abs/1606.05250) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/SQuAD.jsonl.gz) | be0d95e28b470254b3574aeada84a79d | 10,507 |
 | [NewsQA](https://arxiv.org/abs/1611.09830) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/NewsQA.jsonl.gz) | aa9878b7469ad5b5c0f0738636cdb5bd | 4,212 |
-| [TriviaQA Unfiltered](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/TriviaQA-unfilt.jsonl.gz) | 151ae949947e7ada9b38f55a0f670473 | 8,439 |
 | [TriviaQA Web](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/TriviaQA-web.jsonl.gz) | fdfac306651dd74372f0edcff357ec80 | 7,785|
 | [SearchQA](https://arxiv.org/abs/1704.05179) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/SearchQA.jsonl.gz) | fa087f2cc134f9c316f1d93c40827615 | 16,980 |
 | [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/HotpotQA.jsonl.gz) | d0adef52100cbbf93090ba6c06b83b2b | 5,901 |
@@ -129,7 +127,7 @@ Note that it is permissible to download the original datasets and use them as yo
 - **qid:** A unique identifier for the question. The `qid` is unique across all datasets.
 - **question:** The raw text of the question.
 - **question_tokens:** A tokenized version of the question. The tokenizer and token format is the same as for the context.
-- **detected_answers:** A list of answer spans for the given question that index into the context. For some datasets these spans have been automatically detected using searching heuristics. For any given answer, it may appear multiple times in the text --- each of these occurrences is given. For example, if `42` is the answer, the context `"The answer is 42. 42 is the answer."`, has two occurences.
+- **detected_answers:** A list of answer spans for the given question that index into the context. For some datasets these spans have been automatically detected using searching heuristics. The same answer may appear multiple times in the text --- each of these occurrences is recorded. For example, if `42` is the answer, the context `"The answer is 42. 42 is the answer."`, has two occurrences marked.
   - **text:** The raw text of the detected answer.
   - **char_spans:** Inclusive `[start, end]` character spans (indexing into the raw context).
   - **token_spans:** Inclusive `[start, end]` token spans (indexing into the tokenized context).
