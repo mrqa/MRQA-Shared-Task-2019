@@ -77,7 +77,7 @@ To download the development data of the training datasets (in-domain), run:
 
 ## MRQA Format
 
-All of the datasets for this task have been adapted to follow a unified format. They are stored a compressed JSONL files (`.jsonl.gz`).
+All of the datasets for this task have been adapted to follow a unified format. They are stored as compressed [JSONL](http://jsonlines.org/) files (with file extension `.jsonl.gz`).
 
 The general format is:
 
@@ -85,7 +85,7 @@ The general format is:
 {
   "header": {
     "dataset": <dataset name>,
-    "mrqa_split": <train|dev|test>,
+    "split": <train|dev|test>,
   }
 }
 ...
