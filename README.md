@@ -31,6 +31,13 @@ We have adapted several existing datasets from their original formats and settin
 - There are no unanswerable or non-span answer questions.
 - All questions have at least one accepted answer that is found exactly in the context.
 
+A span is judged to be an exact match if it matches the answer string after performing normalization:
+
+- The text is uncased.
+- All punctuation is stripped.
+- All articles `{a, an, the}` are removed.
+- All consecutive whitespace markers are compressed to just a single normal space `' '`.
+
 ### Training Data
 
 | Dataset | Download | MD5SUM | Examples |
@@ -99,13 +106,13 @@ The general format is:
       "question_tokens": [(token_1, offset_1), ..., (token_q, offset_q)],
       "detected_answers": [
         {
-          "text": <normalized answer string>,
+          "text": <answer text>,
           "char_spans": [[<start_1, end_1>], ..., [<start_n, end_n>]],
           "token_spans": [[<start_1, end_1>], ..., [<start_n, end_n>]],
         },
         ...
       ],
-      "answers": [<raw_text_1>, ..., <raw_text_m>]
+      "answers": [<answer_text_1>, ..., <answer_text_m>]
     },
     ...
   ]
