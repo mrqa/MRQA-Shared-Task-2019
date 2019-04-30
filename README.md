@@ -31,7 +31,7 @@ We have adapted several existing datasets from their original formats and settin
 - There are no unanswerable or non-span answer questions.
 - All questions have at least one accepted answer that is found exactly in the context.
 
-A span is judged to be an exact match if it matches the answer string after performing normalization:
+A span is judged to be an exact match if it matches the answer string after performing normalization consistent with the [SQuAD](https://stanford-qa.com) dataset. Specifically:
 
 - The text is uncased.
 - All punctuation is stripped.
