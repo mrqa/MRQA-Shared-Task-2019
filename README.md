@@ -33,8 +33,6 @@ We have adapted several existing datasets from their original formats and settin
 
 ### Training Data
 
-The following datasets have been selected for training:
-
 | Dataset | Download | MD5SUM | Examples |
 | :-----: | :-------:| :----: | :------: |
 | [SQuAD](https://arxiv.org/abs/1606.05250) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/train/SQuAD.jsonl.gz) | 67afd110c0ad9860c4e88f16a44cd44c | 86,588 |
