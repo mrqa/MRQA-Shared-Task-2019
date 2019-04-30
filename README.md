@@ -37,13 +37,13 @@ The following datasets have been selected for training:
 
 | Dataset | Download | MD5SUM | Examples |
 | :-----: | :-------:| :----: | :------: |
-| [SQuAD](https://arxiv.org/abs/1606.05250) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/SQuAD.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
-| [NewsQA](https://arxiv.org/abs/1611.09830) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/NewsQA.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
-| [TriviaQA Unfiltered](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/TriviaQA-unfilt.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
-| [TriviaQA Web](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/TriviaQA-web.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
-| [SearchQA](https://arxiv.org/abs/1704.05179) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/SearchQA.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
-| [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/HotpotQA.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
-| [NaturalQuestions](https://ai.google/research/pubs/pub47761) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/NaturalQuestionsShort.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
+| [SQuAD](https://arxiv.org/abs/1606.05250) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/SQuAD.jsonl.gz) | 67afd110c0ad9860c4e88f16a44cd44c | 86,588 |
+| [NewsQA](https://arxiv.org/abs/1611.09830) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/NewsQA.jsonl.gz) | d8288b5de5bd10fb42ce5291ef0f7fbe | 74,160 |
+| [TriviaQA Unfiltered](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/TriviaQA-unfilt.jsonl.gz) | 659368c754f8a6fca695a27c38027061 | 65,060 |
+| [TriviaQA Web](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/TriviaQA-web.jsonl.gz) | 1d198c0cd60e4d91130e2a2545eb9122 | 61,688 |
+| [SearchQA](https://arxiv.org/abs/1704.05179) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/SearchQA.jsonl.gz) | fa9c8c6b2f24e4f410cba81ef63ea284 | 117,384 |
+| [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/HotpotQA.jsonl.gz) | 53e65212b46c74a6ee95e83817443db1 | 72,912 |
+| [NaturalQuestions](https://ai.google/research/pubs/pub47761) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/train/NaturalQuestionsShort.jsonl.gz) | f12d2ce98ba0065a79226b9fa22d936a | 104,071 |
 
 ### Development Data
 
@@ -51,13 +51,13 @@ The following datasets have been selected for training:
 
 | Dataset | Download | MD5SUM | Examples |
 | :-----: | :-------:| :----: | :------: |
-| [SQuAD](https://arxiv.org/abs/1606.05250) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/SQuAD.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
-| [NewsQA](https://arxiv.org/abs/1611.09830) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/NewsQA.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
-| [TriviaQA Unfiltered](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/TriviaQA-unfilt.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
-| [TriviaQA Web](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/TriviaQA-web.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
-| [SearchQA](https://arxiv.org/abs/1704.05179) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/SearchQA.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
-| [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/HotpotQA.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
-| [NaturalQuestions](https://ai.google/research/pubs/pub47761) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/NaturalQuestionsShort.jsonl.gz) | 60173a5106e3a30f0466a16c1170d001 | 86,588 |
+| [SQuAD](https://arxiv.org/abs/1606.05250) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/SQuAD.jsonl.gz) | be0d95e28b470254b3574aeada84a79d | 10,507 |
+| [NewsQA](https://arxiv.org/abs/1611.09830) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/NewsQA.jsonl.gz) | aa9878b7469ad5b5c0f0738636cdb5bd | 4,212 |
+| [TriviaQA Unfiltered](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/TriviaQA-unfilt.jsonl.gz) | 151ae949947e7ada9b38f55a0f670473 | 8,439 |
+| [TriviaQA Web](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/TriviaQA-web.jsonl.gz) | fdfac306651dd74372f0edcff357ec80 | 7,785|
+| [SearchQA](https://arxiv.org/abs/1704.05179) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/SearchQA.jsonl.gz) | fa087f2cc134f9c316f1d93c40827615 | 16,980 |
+| [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/HotpotQA.jsonl.gz) | d0adef52100cbbf93090ba6c06b83b2b | 5,901 |
+| [NaturalQuestions](https://ai.google/research/pubs/pub47761) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/data/dev/NaturalQuestionsShort.jsonl.gz) | a017834fddfe9df888b7f6cd5bbfba2e | 12,836 |
 
 #### Out-of-Domain
 
