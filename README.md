@@ -179,7 +179,7 @@ Submission will be handled through the [Codalab](https://worksheets.codalab.org/
 Instructions will be released soon.
 We will ask participants to submit two components:
 
-1. A command that makes predictions given a `.jsonl.gz` file in our standard format
+1. A command that makes predictions given a `.jsonl.gz` file in our standard format;
 2. A command that starts a local server that accepts POST requests of single JSON objects in our standard format, and returns a JSON prediction object.
 
 The `baseline` directory includes example implementations of both components, in `predict.py` and `serve.py`, respectively.
