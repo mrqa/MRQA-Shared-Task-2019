@@ -1,4 +1,4 @@
- ## Setup
+## Setup
 
 ### Setting up a virtual environment
 
@@ -15,7 +15,7 @@
     ```
 
 3.  Activate the virtual environment.
-    
+
     ```
     source venv/bin/activate (or source venv/bin/activate.csh)
     ```
@@ -44,7 +44,7 @@ The allennlp caching infra is used, so be sure to have enough disk space, and co
  `python -m allennlp.run train s3://multiqa/config/MRQA_BERTbase.json -s Models/MultiTrain -o "{'dataset_reader': {'sample_size': 75000}, 'validation_dataset_reader': {'sample_size': 1000}, 'train_data_path': 's3://mrqa/data/train/SQuAD.jsonl.gz,s3://mrqa/data/train/NewsQA.jsonl.gz,s3://mrqa/data/train/HotpotQA.jsonl.gz,s3://mrqa/data/train/SearchQA.jsonl.gz,s3://mrqa/data/train/TriviaQA-web.jsonl.gz', 'validation_data_path': 's3://mrqa/data/dev/SQuAD.jsonl.gz,s3://mrqa/data/dev/NewsQA.jsonl.gz,s3://mrqa/data/dev/HotpotQA.jsonl.gz,s3://mrqa/data/dev/SearchQA.jsonl.gz,s3://mrqa/data/dev/TriviaQA-web.jsonl.gz', 'trainer': {'cuda_device': -1, 'num_epochs': '2', 'optimizer': {'type': 'bert_adam', 'lr': 3e-05, 'warmup': 0.1, 't_total': '120000'}}}" --include-package mrqa_iterator --include-package BERT_QA --include-package mrqa_reader`
  
  
- ## Making predictions
+## Making predictions
  
  `python predict.py model dataset outputfile `
  
@@ -54,11 +54,20 @@ The allennlp caching infra is used, so be sure to have enough disk space, and co
  `python predict.py https://s3.us-east-2.amazonaws.com/mrqa/models/BERT/_MIX_6.tar.gz https://s3.us-east-2.amazonaws.com/mrqa/data/dev/SQuAD.jsonl.gz pred-output.json --cuda_device 0`
  
  
- ### Evaluate 
+### Evaluate 
  `python ../mrqa_official_eval.py https://s3.us-east-2.amazonaws.com/mrqa/data/dev/SQuAD.jsonl.gz pred-output.json`
  
- 
- 
+## Server mode
+To query a single JSON object in the MRQA format, start a server:
 
+    ```
+    python serve.py https://s3.us-east-2.amazonaws.com/mrqa/models/BERT/_MIX_6.tar.gz
+    ```
 
+To interact with the server, send a POST request:
 
+    ```
+    curl -X POST -H "Content-Type: application/json" -d @NewsQA_single_sample.json localhost:8888
+    ```
+
+You should get the response, `{"f7b2f89be1724a9c86cbcc347b0c4425":"Harrison Ford"}`.

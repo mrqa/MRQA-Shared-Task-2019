@@ -169,11 +169,18 @@ The predictions file must be a valid JSON file of `qid`, `answer` pairs:
 
 The final score for the MRQA shared task will be the macro-average across all test datasets.
 
+## Baseline Model
+
+An implementation of a simple multi-task BERT-based baseline model is available in the `baseline` directory. 
+
 ## Submission
 
 Submission will be handled through the [Codalab](https://worksheets.codalab.org/) platform.
 Instructions will be released soon.
+We will ask participants to submit two components:
 
-## Baseline Model
+1. A command that makes predictions given a `.jsonl.gz` file in our standard format
+2. A command that starts a local server that accepts POST requests of single JSON objects in our standard format, and returns a JSON prediction object.
 
-An implementation of a simple multi-task BERT-based baseline model is available in the `baseline` directory. 
+The `baseline` directory includes example implementations of both components, in `predict.py` and `serve.py`, respectively.
+The server will be used to create interactive demos for all submitted models.
