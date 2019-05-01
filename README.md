@@ -169,6 +169,11 @@ The predictions file must be a valid JSON file of `qid`, `answer` pairs:
 
 The final score for the MRQA shared task will be the macro-average across all test datasets.
 
+## Submission
+
+Submission will be handled through the [Codalab](https://worksheets.codalab.org/) platform.
+Instructions will be released soon.
+
 ## Baseline Model
 
 An implementation of a simple multi-task BERT-based baseline model is available in the `baseline` directory. 
