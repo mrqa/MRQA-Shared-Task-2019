@@ -67,19 +67,15 @@ The AllenNLP train command is used for training. The training and validation fil
  
  
 ### Evaluate 
- `python ../mrqa_official_eval.py https://s3.us-east-2.amazonaws.com/mrqa/data/dev/SQuAD.jsonl.gz pred-output.json`
+`python ../mrqa_official_eval.py https://s3.us-east-2.amazonaws.com/mrqa/data/dev/SQuAD.jsonl.gz pred-output.json`
  
 ## Server mode
 To query a single JSON object in the MRQA format, start a server:
-
-    ```
-    python serve.py https://s3.us-east-2.amazonaws.com/mrqa/models/BERT/_MIX_6.tar.gz
-    ```
-
+```
+python serve.py https://s3.us-east-2.amazonaws.com/mrqa/models/BERT/_MIX_6.tar.gz
+```
 To interact with the server, send a POST request:
-
-    ```
-    curl -X POST -H "Content-Type: application/json" -d @NewsQA_single_sample.json localhost:8888
-    ```
-
+```
+curl -X POST -H "Content-Type: application/json" -d @NewsQA_single_sample.json localhost:8888
+```
 You should get the response, `{"f7b2f89be1724a9c86cbcc347b0c4425":"Harrison Ford"}`.
