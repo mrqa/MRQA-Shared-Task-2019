@@ -64,6 +64,8 @@ A span is judged to be an exact match if it matches the answer string after perf
 | [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/HotpotQA.jsonl.gz) | d0adef52100cbbf93090ba6c06b83b2b | 5,901 |
 | [NaturalQuestions](https://ai.google/research/pubs/pub47761) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/NaturalQuestionsShort.jsonl.gz) | a017834fddfe9df888b7f6cd5bbfba2e | 12,836 |
 
+**Note:** This in-domain data may be used for helping develop models. The final testing, however, will only contain out-of-domain data.
+
 #### Out-of-Domain
 
 *Out-of-domain data will be released at a future date.*
