@@ -68,6 +68,8 @@ The following datasets have been selected for training:
 | [RelationExtraction](https://arxiv.org/abs/1706.04115) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/RelationExtraction.jsonl.gz) | 20e0fc79f26d13eaac68e62c77980223 | 2,948|
 | [TextbookQA](http://ai2-website.s3.amazonaws.com/publications/CVPR17_TQA.pdf) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/TextbookQA.jsonl.gz) | 3319b8aab7aea550e2392f9b95bbf415 | 1,503 |
 
+*The BioASQ split will be released through the BioASQ website. Details pending.*
+
 ## Download Scripts
 
 We have provided a convenience script to download all of the training and development data (that is released).
