@@ -49,7 +49,14 @@ The AllenNLP train command is used for training. The training and validation fil
  
 
  ### BERTLarge
-  Training on all training sets (multi-task), this is our baseline training for BERTLarge:
+  
+  Training on all training sets (multi-task), this is our baseline training for BERTLarge.
+  
+  1. Multi-task training dataset is limited to 75,000 examples per dataset.
+  2. 1,000 examples are sampled for each development set is sampled.
+  3. 'train_data_path'/'validation_data_path: 6 pre-processed training datasets are specified for the mix.
+  4. 'cuda_device': [2,3,4,5]: an example of using 4 GPUs for BERTLarge with AllenNLP.  
+  5. 't_total': learning rate scheduler parameter for BERT model.  
  
   `python -m allennlp.run train s3://multiqa/config/MRQA_BERTLarge.json -s Models/MultiTrain -o "{'dataset_reader': {'sample_size': 75000}, 'validation_dataset_reader': {'sample_size': 1000}, 'train_data_path': 's3://mrqa/data/train/SQuAD.jsonl.gz,s3://mrqa/data/train/NewsQA.jsonl.gz,s3://mrqa/data/train/HotpotQA.jsonl.gz,s3://mrqa/data/train/SearchQA.jsonl.gz,s3://mrqa/data/train/TriviaQA-web.jsonl.gz,s3://mrqa/data/train/NaturalQuestionsShort.jsonl.gz', 'validation_data_path': 's3://mrqa/data/dev/SQuAD.jsonl.gz,s3://mrqa/data/dev/NewsQA.jsonl.gz,s3://mrqa/data/dev/HotpotQA.jsonl.gz,s3://mrqa/data/dev/SearchQA.jsonl.gz,s3://mrqa/data/dev/TriviaQA-web.jsonl.gz,s3://mrqa/data/dev/NaturalQuestionsShort.jsonl.gz', 'trainer': {'cuda_device': [2,3,4,5], 'num_epochs': '2', 'optimizer': {'type': 'bert_adam', 'lr': 3e-05, 'warmup': 0.1, 't_total': '145000'}}}" --include-package mrqa_allennlp`
  
@@ -59,13 +66,19 @@ The AllenNLP train command is used for training. The training and validation fil
 ## Making predictions
  
  `python predict.py model dataset outputfile `
- 
+
+Example for predicting SQuAD dev using BERTbase Multi-Task model: 
+
  `python predict.py https://s3.us-east-2.amazonaws.com/mrqa/models/BERT/_MIX_6.tar.gz https://s3.us-east-2.amazonaws.com/mrqa/data/dev/SQuAD.jsonl.gz pred-output.json`
  
- With GPU device:
+ Specifying a GPU device:
+ 
  `python predict.py https://s3.us-east-2.amazonaws.com/mrqa/models/BERT/_MIX_6.tar.gz https://s3.us-east-2.amazonaws.com/mrqa/data/dev/SQuAD.jsonl.gz pred-output.json --cuda_device 0`
  
 ### Evaluate 
+ 
+ An example of using the official evaluation script on SQuAD development set with the model predictions generated in the previous section: 
+ 
  `python ../mrqa_official_eval.py https://s3.us-east-2.amazonaws.com/mrqa/data/dev/SQuAD.jsonl.gz pred-output.json`
  
 ## Results
@@ -87,6 +100,7 @@ Results are reported as EM/F1. I = in-domain, O = out-of-domain.
 | (O) RelationExtraction | 72.6 / 83.8 | 72.7 / 85.2 |
 | (O) DuoRC | 44.8 / 54.6 | 46.8 / 58.0 |
  
+* Please note that these results refer to pre-processed versions of these datasets, and not the official version. (see our pre-processing description for details) 
 ## Server mode
 To query a single JSON object in the MRQA format, start a server:
 ```
