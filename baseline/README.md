@@ -80,7 +80,7 @@ Results are reported as EM/F1. I = in-domain, O = out-of-domain.
 | (I) NewsQA | 50.8 / 66.8 | 49.6 / 66.3 |
 | (I) SearchQA | 69.5 / 76.7 | 71.8 / 79.0 |
 | (I) NaturalQuestions | 65.4 / 77.4 | 67.9 / 79.8 |
-| (O) Drop | 25.7 / 34.5 | 34.6 / 43.8 |
+| (O) DROP | 25.7 / 34.5 | 34.6 / 43.8 |
 | (O) RACE | 30.4 / 41.4 | 31.3 / 42.5 |
 | (O) BioASQ | 47.1 / 62.7 | 51.9 / 66.8 |
 | (O) TextbookQA | 44.9 / 53.9 | 47.4 / 55.7 |
