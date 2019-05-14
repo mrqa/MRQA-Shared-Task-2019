@@ -52,7 +52,7 @@ The AllenNLP train command is used for training. The training and validation fil
   
   Training on all training sets (multi-task), this is our baseline training for BERTLarge.
   
-  1. Multi-task training dataset is limited to 75,000 examples per dataset.
+  1. Multi-task training datasets are limited to 75,000 examples per dataset.
   2. 1,000 examples are sampled for each development set is sampled.
   3. 'train_data_path'/'validation_data_path: 6 pre-processed training datasets are specified for the mix.
   4. 'cuda_device': [2,3,4,5]: an example of using 4 GPUs for BERTLarge with AllenNLP.  
