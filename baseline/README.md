@@ -100,7 +100,7 @@ Results are reported as EM/F1. I = in-domain, O = out-of-domain.
 | (O) RelationExtraction | 72.6 / 83.8 | 72.7 / 85.2 |
 | (O) DuoRC | 44.8 / 54.6 | 46.8 / 58.0 |
  
-* Please note that these results refer to pre-processed versions of these datasets, and not the official version. (see our pre-processing description for details) 
+* Please note that these results refer to pre-processed versions and not official version of these datasets. (see our pre-processing description for details) 
 ## Server mode
 To query a single JSON object in the MRQA format, start a server:
 ```
