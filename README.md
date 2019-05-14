@@ -24,6 +24,7 @@ This repository contains resources for accessing the official training and devel
 - [Visualize](#visualization)
 - [Evaluate](#evaluation)
 - [Baseline](#baseline-model)
+- [Submission](#submission)
 
 ## Datasets
 
@@ -77,6 +78,12 @@ A span is judged to be an exact match if it matches the answer string after perf
 | [RelationExtraction](https://arxiv.org/abs/1706.04115) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/RelationExtraction.jsonl.gz) | 20e0fc79f26d13eaac68e62c77980223 | 2,948|
 | [TextbookQA](http://ai2-website.s3.amazonaws.com/publications/CVPR17_TQA.pdf) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/TextbookQA.jsonl.gz) | 3319b8aab7aea550e2392f9b95bbf415 | 1,503 |
 
+**Note:** The out-of-domain dataset have been modified from their original settings to fit the unified MRQA Shared Task paradigm (see [MRQA Format](#mrqa-format)). At a high level, the following two major modifications have been made:
+
+1. All QA-context pairs are extractive. That is, the answer is selected from the context and not via, e.g., multiple-choice.
+2. All contexts are capped at a maximum of `800` tokens. As a result, for longer contexts like Wikipedia articles, we only consider examples where the answer appears in the first `800` tokens.
+
+As a result, some splits are harder than the original datasets (e.g., removal of multiple-choice in RACE), while some are easier (e.g., restricted context length in NaturalQuestions --- we use the short answer selection). 
 
 ## Download Scripts
 
@@ -166,7 +173,7 @@ python visualize.py https://s3.us-east-2.amazonaws.com/mrqa/release/train/SQuAD.
 
 ## Evaluation
 
-Answers are evaluated using exact match and token-level F1 metrics. The `mrqa_official_eval.py` script is used to evaluate predictions on a given dataset:
+Answers are evaluated using exact match and token-level F1 metrics. The [mrqa_official_eval.py](mrqa_official_eval.py) script is used to evaluate predictions on a given dataset:
 
 ```
 python mrqa_official_eval.py <url_or_filename> <predictions_file>
@@ -186,7 +193,7 @@ The final score for the MRQA shared task will be the macro-average across all te
 
 ## Baseline Model
 
-An implementation of a simple multi-task BERT-based baseline model is available in the `baseline` directory. 
+An implementation of a simple multi-task BERT-based baseline model is available in the [baseline](baseline) directory. 
 
 Below are our baseline results (I = in-domain, O = out-of-domain):
 
