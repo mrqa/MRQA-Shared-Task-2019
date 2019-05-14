@@ -83,7 +83,7 @@ A span is judged to be an exact match if it matches the answer string after perf
 1. All QA-context pairs are extractive. That is, the answer is selected from the context and not via, e.g., multiple-choice.
 2. All contexts are capped at a maximum of `800` tokens. As a result, for longer contexts like Wikipedia articles, we only consider examples where the answer appears in the first `800` tokens.
 
-As a result, some splits are harder than the original datasets (e.g., removal of multiple-choice in RACE), while some are easier (e.g., restricted context length in NaturalQuestions --- we use the short answer selection). 
+As a result, some splits are harder than the original datasets (e.g., removal of multiple-choice in RACE), while some are easier (e.g., restricted context length in NaturalQuestions --- we use the short answer selection). Thus one should expect different performance ranges if comparing to previous work on these datasets.
 
 ## Download Scripts
 
