@@ -63,7 +63,7 @@ The following datasets have been selected for training:
 
 | Dataset | Download | MD5SUM | Examples |
 | :-----: | :-------:| :----: | :------: |
-| [DROP.jsonl.gz](https://arxiv.org/abs/1903.00161) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/DROP.jsonl.gz) | 0b509e2bebdba16d81f1d3c4f9bedf7c | 1,503 |
+| [DROP](https://arxiv.org/abs/1903.00161) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/DROP.jsonl.gz) | 0b509e2bebdba16d81f1d3c4f9bedf7c | 1,503 |
 | [DuoRC](https://arxiv.org/abs/1804.07927) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/DuoRC.ParaphraseRC.jsonl.gz) | dcb351275bb7695a54270ca4b59b85c8 | 1,501 |
 | [RACE](https://arxiv.org/abs/1704.04683) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/RACE.jsonl.gz) | 6cf376f0ab4217e147a2ff4603972e37 | 674 |
 | [RelationExtraction](https://arxiv.org/abs/1706.04115) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/RelationExtraction.jsonl.gz) | 20e0fc79f26d13eaac68e62c77980223 | 2,948|
