@@ -189,6 +189,24 @@ The final score for the MRQA shared task will be the macro-average across all te
 
 An implementation of a simple multi-task BERT-based baseline model is available in the `baseline` directory. 
 
+Below are our baseline results (I = in-domain, O = out-of-domain):
+
+| Dataset | [Multi-Task BERT-Base](https://s3.us-east-2.amazonaws.com/mrqa/models/BERT/_MIX_6.tar.gz) | [Multi-Task BERT-Large](https://s3.us-east-2.amazonaws.com/mrqa/models/BERT/_MIX_6_large.tar.gz)|
+| :----- | :-------------------:| :------------------: |
+| (I) SQuAD | 78.5 / 86.7 | 80.3 / 88.4 |
+| (I) HotpotQA | 59.8 / 76.6 | 62.4 / 79.0 |
+| (I) TriviaQA Web | 65.6 / 71.6 | 68.2 / 74.7 |
+| (I) NewsQA | 50.8 / 66.8 | 49.6 / 66.3 |
+| (I) SearchQA | 69.5 / 76.7 | 71.8 / 79.0 |
+| (I) NaturalQuestions | 65.4 / 77.4 | 67.9 / 79.8 |
+| (O) Drop | 25.7 / 34.5 | 34.6 / 43.8 |
+| (O) RACE | 30.4 / 41.4 | 31.3 / 42.5 |
+| (O) BioASQ | 47.1 / 62.7 | 51.9 / 66.8 |
+| (O) TextbookQA | 44.9 / 53.9 | 47.4 / 55.7 |
+| (O) RelationExtraction | 72.6 / 83.8 | 72.7 / 85.2 |
+| (O) DuoRC | 44.8 / 54.6 | 46.8 / 58.0 |
+ 
+
 ## Submission
 
 Submission will be handled through the [Codalab](https://worksheets.codalab.org/) platform.
