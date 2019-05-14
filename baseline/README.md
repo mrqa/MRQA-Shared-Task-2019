@@ -63,7 +63,7 @@ The allennlp caching infra is used, so be sure to have enough disk space, and co
 Results are reported as EM/F1. I = in-domain, O = out-of-domain.
 
 | Dataset | [Multi-Task BERT-Base](https://s3.us-east-2.amazonaws.com/mrqa/models/BERT/_MIX_6.tar.gz) | [Multi-Task BERT-Large](https://s3.us-east-2.amazonaws.com/mrqa/models/BERT/_MIX_6_large.tar.gz)|
-| :-----: | :-------------------:| :------------------: |
+| -----: | :-------------------:| :------------------: |
 | (I) SQuAD | 78.5 / 86.7 | 80.3 / 88.4 |
 | (I) HotpotQA | 59.8 / 76.6 | 62.4 / 79.0 |
 | (I) TriviaQA Web | 65.6 / 71.6 | 68.2 / 74.7 |
