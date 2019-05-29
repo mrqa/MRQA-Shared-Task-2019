@@ -29,6 +29,7 @@ This repository contains resources for accessing the official training and devel
 ## Datasets
 
 **Updated 5/29/2019 to correct for truncated `detected_answers` field**
+*(See [#5](https://github.com/mrqa/MRQA-Shared-Task-2019/issues/5) for details.)*
 
 We have adapted several existing datasets from their original formats and settings to conform to our unified extractive setting. Most notably:
 
