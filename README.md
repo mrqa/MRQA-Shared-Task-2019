@@ -28,6 +28,8 @@ This repository contains resources for accessing the official training and devel
 
 ## Datasets
 
+**Updated 5/29/2019 to correct for truncated `detected_answers` field**
+
 We have adapted several existing datasets from their original formats and settings to conform to our unified extractive setting. Most notably:
 
 - We provide only a single, length-limited context.
@@ -45,12 +47,12 @@ A span is judged to be an exact match if it matches the answer string after perf
 
 | Dataset | Download | MD5SUM | Examples |
 | :-----: | :-------:| :----: | :------: |
-| [SQuAD](https://arxiv.org/abs/1606.05250) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/train/SQuAD.jsonl.gz) | 67afd110c0ad9860c4e88f16a44cd44c | 86,588 |
-| [NewsQA](https://arxiv.org/abs/1611.09830) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/train/NewsQA.jsonl.gz) | d8288b5de5bd10fb42ce5291ef0f7fbe | 74,160 |
-| [TriviaQA](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/train/TriviaQA-web.jsonl.gz) | 1d198c0cd60e4d91130e2a2545eb9122 | 61,688 |
-| [SearchQA](https://arxiv.org/abs/1704.05179) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/train/SearchQA.jsonl.gz) | fa9c8c6b2f24e4f410cba81ef63ea284 | 117,384 |
-| [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/train/HotpotQA.jsonl.gz) | 53e65212b46c74a6ee95e83817443db1 | 72,912 |
-| [NaturalQuestions](https://ai.google/research/pubs/pub47761) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/train/NaturalQuestionsShort.jsonl.gz) | f12d2ce98ba0065a79226b9fa22d936a | 104,071 |
+| [SQuAD](https://arxiv.org/abs/1606.05250) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/train/SQuAD.jsonl.gz) | efd6a551d2697c20a694e933210489f8 | 86,588 |
+| [NewsQA](https://arxiv.org/abs/1611.09830) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/train/NewsQA.jsonl.gz) | 182f4e977b849cb1dbfb796030b91444 | 74,160 |
+| [TriviaQA](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/train/TriviaQA-web.jsonl.gz) | e18f586152612a9358c22f5536bfd32a | 61,688 |
+| [SearchQA](https://arxiv.org/abs/1704.05179) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/train/SearchQA.jsonl.gz) | 612245315e6e7c4d8446e5fcc3dc1086 | 117,384 |
+| [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/train/HotpotQA.jsonl.gz) | 749f30cb8f8d462323eb835d34c7d7cf | 72,912 |
+| [NaturalQuestions](https://ai.google/research/pubs/pub47761) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/train/NaturalQuestionsShort.jsonl.gz) | e27d27bf7c49eb5ead43cef3f41de6be | 104,071 |
 
 ### Development Data
 
@@ -58,12 +60,12 @@ A span is judged to be an exact match if it matches the answer string after perf
 
 | Dataset | Download | MD5SUM | Examples |
 | :-----: | :-------:| :----: | :------: |
-| [SQuAD](https://arxiv.org/abs/1606.05250) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/SQuAD.jsonl.gz) | be0d95e28b470254b3574aeada84a79d | 10,507 |
-| [NewsQA](https://arxiv.org/abs/1611.09830) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/NewsQA.jsonl.gz) | aa9878b7469ad5b5c0f0738636cdb5bd | 4,212 |
-| [TriviaQA](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/TriviaQA-web.jsonl.gz) | fdfac306651dd74372f0edcff357ec80 | 7,785|
-| [SearchQA](https://arxiv.org/abs/1704.05179) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/SearchQA.jsonl.gz) | fa087f2cc134f9c316f1d93c40827615 | 16,980 |
-| [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/HotpotQA.jsonl.gz) | d0adef52100cbbf93090ba6c06b83b2b | 5,901 |
-| [NaturalQuestions](https://ai.google/research/pubs/pub47761) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/NaturalQuestionsShort.jsonl.gz) | a017834fddfe9df888b7f6cd5bbfba2e | 12,836 |
+| [SQuAD](https://arxiv.org/abs/1606.05250) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/SQuAD.jsonl.gz) | 05f3f16c5c31ba8e46ff5fa80647ac46 | 10,507 |
+| [NewsQA](https://arxiv.org/abs/1611.09830) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/NewsQA.jsonl.gz) | 5c188c92a84ddffe2ab590ac7598bde2 | 4,212 |
+| [TriviaQA](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/TriviaQA-web.jsonl.gz) | a7a3bd90db58524f666e757db659b047 | 7,785|
+| [SearchQA](https://arxiv.org/abs/1704.05179) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/SearchQA.jsonl.gz) | bfcb304f1b3167693b627cbf0f98bc9e | 16,980 |
+| [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/HotpotQA.jsonl.gz) | aecefa5e63a1ade5f27f97ac229a5605 | 5,901 |
+| [NaturalQuestions](https://ai.google/research/pubs/pub47761) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/NaturalQuestionsShort.jsonl.gz) | c0347eebbca02d10d1b07b9a64efe61d | 12,836 |
 
 **Note:** This in-domain data may be used for helping develop models. The final testing, however, will only contain out-of-domain data.
 
@@ -71,12 +73,12 @@ A span is judged to be an exact match if it matches the answer string after perf
 
 | Dataset | Download | MD5SUM | Examples |
 | :-----: | :-------:| :----: | :------: |
-| [BioASQ](http://bioasq.org/) | [Link](http://participants-area.bioasq.org/MRQA2019/) | 00ac07599c80c1ac36256f0a2f4bda48 | 1,504 |
-| [DROP](https://arxiv.org/abs/1903.00161) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/DROP.jsonl.gz) | 0b509e2bebdba16d81f1d3c4f9bedf7c | 1,503 |
-| [DuoRC](https://arxiv.org/abs/1804.07927) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/DuoRC.ParaphraseRC.jsonl.gz) | dcb351275bb7695a54270ca4b59b85c8 | 1,501 |
-| [RACE](https://arxiv.org/abs/1704.04683) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/RACE.jsonl.gz) | 6cf376f0ab4217e147a2ff4603972e37 | 674 |
-| [RelationExtraction](https://arxiv.org/abs/1706.04115) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/RelationExtraction.jsonl.gz) | 20e0fc79f26d13eaac68e62c77980223 | 2,948|
-| [TextbookQA](http://ai2-website.s3.amazonaws.com/publications/CVPR17_TQA.pdf) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/dev/TextbookQA.jsonl.gz) | 3319b8aab7aea550e2392f9b95bbf415 | 1,503 |
+| [BioASQ](http://bioasq.org/) | [Link](http://participants-area.bioasq.org/MRQA2019/) | 6408dc4fcf258535d0ea8b125bba5fbb | 1,504 |
+| [DROP](https://arxiv.org/abs/1903.00161) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/DROP.jsonl.gz) | 8b03867e4da2817ef341707040d99785 | 1,503 |
+| [DuoRC](https://arxiv.org/abs/1804.07927) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/DuoRC.ParaphraseRC.jsonl.gz) | 9e66769a70fdfdec4906a4bcef5f3d71 | 1,501 |
+| [RACE](https://arxiv.org/abs/1704.04683) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/RACE.jsonl.gz) | 94a7ef9b9ea9402671e5b0248b6a5395 | 674 |
+| [RelationExtraction](https://arxiv.org/abs/1706.04115) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/RelationExtraction.jsonl.gz) | 128d318ea1391bf77234d8c1b69a45df | 2,948|
+| [TextbookQA](http://ai2-website.s3.amazonaws.com/publications/CVPR17_TQA.pdf) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/TextbookQA.jsonl.gz) | 76ca9cc16625dd8da75758d64676e6a1 | 1,503 |
 
 **Note:** As previously mentioned, the out-of-domain dataset have been modified from their original settings to fit the unified MRQA Shared Task paradigm (see [MRQA Format](#mrqa-format)). Once again, at a high level, the following two major modifications have been made:
 
