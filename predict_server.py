@@ -7,7 +7,7 @@ if __name__ == '__main__':
 cd baseline
 python3.6 serve.py <params.gz> 8888 &  # Start model server in separate process on port 8888
 cd ..
-python3.6 predict-server.py data.jsonl pred.jsonl 8888  # Query model on data.jsonl, generate pred.jsonl
+python3.6 predict-server.py data.jsonl pred.json 8888  # Query model on data.jsonl, generate pred.json
 """
 import argparse
 from allennlp.common.file_utils import cached_path
