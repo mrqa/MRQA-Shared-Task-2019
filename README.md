@@ -28,6 +28,9 @@ This repository contains resources for accessing the official training and devel
 
 ## Datasets
 
+**Updated 6/13/2019 to correct for duplicate context in HotpotQA**
+*(See [#7](https://github.com/mrqa/MRQA-Shared-Task-2019/issues/7) for details.)*
+
 **Updated 5/29/2019 to correct for truncated `detected_answers` field**
 *(See [#5](https://github.com/mrqa/MRQA-Shared-Task-2019/issues/5) for details.)*
 
@@ -52,7 +55,7 @@ A span is judged to be an exact match if it matches the answer string after perf
 | [NewsQA](https://arxiv.org/abs/1611.09830) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/train/NewsQA.jsonl.gz) | 182f4e977b849cb1dbfb796030b91444 | 74,160 |
 | [TriviaQA](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/train/TriviaQA-web.jsonl.gz) | e18f586152612a9358c22f5536bfd32a | 61,688 |
 | [SearchQA](https://arxiv.org/abs/1704.05179) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/train/SearchQA.jsonl.gz) | 612245315e6e7c4d8446e5fcc3dc1086 | 117,384 |
-| [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/train/HotpotQA.jsonl.gz) | 749f30cb8f8d462323eb835d34c7d7cf | 72,912 |
+| [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/train/HotpotQA.jsonl.gz) | d212c7b3fc949bd0dc47d124e8c34907 | 72,928 |
 | [NaturalQuestions](https://ai.google/research/pubs/pub47761) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/train/NaturalQuestionsShort.jsonl.gz) | e27d27bf7c49eb5ead43cef3f41de6be | 104,071 |
 
 ### Development Data
@@ -65,7 +68,7 @@ A span is judged to be an exact match if it matches the answer string after perf
 | [NewsQA](https://arxiv.org/abs/1611.09830) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/NewsQA.jsonl.gz) | 5c188c92a84ddffe2ab590ac7598bde2 | 4,212 |
 | [TriviaQA](https://arxiv.org/abs/1705.03551) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/TriviaQA-web.jsonl.gz) | a7a3bd90db58524f666e757db659b047 | 7,785|
 | [SearchQA](https://arxiv.org/abs/1704.05179) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/SearchQA.jsonl.gz) | bfcb304f1b3167693b627cbf0f98bc9e | 16,980 |
-| [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/HotpotQA.jsonl.gz) | aecefa5e63a1ade5f27f97ac229a5605 | 5,901 |
+| [HotpotQA](https://arxiv.org/abs/1809.09600) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/HotpotQA.jsonl.gz) | 675de35c3605353ec039ca4d2854072d | 5,904 |
 | [NaturalQuestions](https://ai.google/research/pubs/pub47761) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/NaturalQuestionsShort.jsonl.gz) | c0347eebbca02d10d1b07b9a64efe61d | 12,836 |
 
 **Note:** This in-domain data may be used for helping develop models. The final testing, however, will only contain out-of-domain data.
