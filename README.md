@@ -219,11 +219,8 @@ Below are our baseline results (I = in-domain, O = out-of-domain):
 ## Submission
 
 Submission will be handled through the [Codalab](https://worksheets.codalab.org/) platform.
-Instructions will be released soon.
-We will ask participants to submit two components:
-
-1. A command that makes predictions given a `.jsonl.gz` file in our standard format;
-2. A command that starts a local server that accepts POST requests of single JSON objects in our standard format, and returns a JSON prediction object.
-
-The `baseline` directory includes example implementations of both components, in `predict.py` and `serve.py`, respectively.
-The server will be used to create interactive demos for all submitted models.
+Instructions are posted [here](https://worksheets.codalab.org/worksheets/0x926e37ac8b4941f793bf9b9758cc01be/)
+Note that submissions should start a local server that accepts POST requests of single JSON objects in our standard format, and returns a JSON prediction object.
+The official `predict_server.py` script (in this directory) will query this server to get predictions.
+The `baseline` directory includes an example implementation in `serve.py`.
+We have chosen this format so that we can create interactive demos for all submitted models.
