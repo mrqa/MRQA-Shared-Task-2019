@@ -104,7 +104,7 @@ Results are reported as EM/F1. I = in-domain, O = out-of-domain.
 ## Server mode
 To query a single JSON object in the MRQA format, start a server:
 ```
-python serve.py https://s3.us-east-2.amazonaws.com/mrqa/models/BERT/_MIX_6.tar.gz
+python serve.py https://s3.us-east-2.amazonaws.com/mrqa/models/BERT/_MIX_6.tar.gz 8888
 ```
 To interact with the server, send a POST request:
 ```
