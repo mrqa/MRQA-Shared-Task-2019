@@ -15,6 +15,8 @@ We release an official training dataset containing examples from existing extrac
 Each participant will submit a single QA system trained on the provided training data. We will then privately evaluate each system on the hidden test data.
 
 This repository contains resources for accessing the official training and development data.
+If you are interested in participating, please fill out [this form](https://forms.gle/TZCeK9NwAyGozxc57)!
+We will e-mail participants who sign up of any important announcements regarding the shared task.
 
 ### Quick Links
 
