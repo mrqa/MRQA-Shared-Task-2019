@@ -109,7 +109,7 @@ To download the development data of the training datasets (in-domain), run:
 
 To download the out-of-domain development data, run:
 ```
-./download_out_of_domain_domain_dev.sh path/to/store/downloaded/directory
+./download_out_of_domain_dev.sh path/to/store/downloaded/directory
 ```
 
 ## MRQA Format
