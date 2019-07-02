@@ -93,6 +93,14 @@ A span is judged to be an exact match if it matches the answer string after perf
 
 As a result, some splits are harder than the original datasets (e.g., removal of multiple-choice in RACE), while some are easier (e.g., restricted context length in NaturalQuestions --- we use the short answer selection). Thus one should expect different performance ranges if comparing to previous work on these datasets.
 
+### Auxiliary Data
+
+For additional sources of training data, we are whitelisting some non-QA datasets that may be helpful for multi-task learning or pretraining. If you have any other dataset in mind , please raise an issue or send us an email at mrforqa@gmail.com .
+
+**Whitelist**:
+- SNLI
+- MultiNLI
+
 ## Download Scripts
 
 We have provided a convenience script to download all of the training and development data (that is released).
