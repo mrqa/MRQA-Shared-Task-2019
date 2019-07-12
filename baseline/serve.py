@@ -1,15 +1,14 @@
-import argparse
 import mrqa_allennlp
+import argparse
 from allennlp.models.archival import load_archive
 from allennlp.predictors import Predictor
 from allennlp.common.file_utils import cached_path
 import flask
 
-PORT = 8888
-
 if __name__ == "__main__":
     parse = argparse.ArgumentParser("")
     parse.add_argument("model")
+    parse.add_argument("port", type=int)
     parse.add_argument("--cuda_device", type=int, default=-1)
     args = parse.parse_args()
 
@@ -25,4 +24,4 @@ if __name__ == "__main__":
         pred = predictor.predict_json(json_obj)
         return flask.jsonify(pred)
 
-    app.run(port=PORT)
+    app.run(port=args.port)

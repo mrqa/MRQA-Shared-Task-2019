@@ -15,6 +15,8 @@ We release an official training dataset containing examples from existing extrac
 Each participant will submit a single QA system trained on the provided training data. We will then privately evaluate each system on the hidden test data.
 
 This repository contains resources for accessing the official training and development data.
+If you are interested in participating, please fill out [this form](https://forms.gle/TZCeK9NwAyGozxc57)!
+We will e-mail participants who sign up of any important announcements regarding the shared task.
 
 ### Quick Links
 
@@ -96,6 +98,14 @@ A span is judged to be an exact match if it matches the answer string after perf
 
 As a result, some splits are harder than the original datasets (e.g., removal of multiple-choice in RACE), while some are easier (e.g., restricted context length in NaturalQuestions --- we use the short answer selection). Thus one should expect different performance ranges if comparing to previous work on these datasets.
 
+### Auxiliary Data
+
+For additional sources of training data, we are whitelisting some non-QA datasets that may be helpful for multi-task learning or pretraining. If you have any other dataset in mind , please raise an issue or send us an email at mrforqa@gmail.com .
+
+**Whitelist**:
+- SNLI
+- MultiNLI
+
 ## Download Scripts
 
 We have provided a convenience script to download all of the training and development data (that is released).
@@ -112,7 +122,7 @@ To download the development data of the training datasets (in-domain), run:
 
 To download the out-of-domain development data, run:
 ```
-./download_out_of_domain_domain_dev.sh path/to/store/downloaded/directory
+./download_out_of_domain_dev.sh path/to/store/downloaded/directory
 ```
 
 ## MRQA Format
@@ -226,12 +236,10 @@ Below are our baseline results (I = in-domain, O = out-of-domain):
 
 ## Submission
 
-Submission will be handled through the [Codalab](https://worksheets.codalab.org/) platform.
-Instructions will be released soon.
-We will ask participants to submit two components:
+Submission will be handled through the [Codalab](https://worksheets.codalab.org/) platform:
+see [these instructions](https://worksheets.codalab.org/worksheets/0x926e37ac8b4941f793bf9b9758cc01be/).
 
-1. A command that makes predictions given a `.jsonl.gz` file in our standard format;
-2. A command that starts a local server that accepts POST requests of single JSON objects in our standard format, and returns a JSON prediction object.
-
-The `baseline` directory includes example implementations of both components, in `predict.py` and `serve.py`, respectively.
-The server will be used to create interactive demos for all submitted models.
+Note that submissions should start a local server that accepts POST requests of single JSON objects in our standard format, and returns a JSON prediction object.
+The official `predict_server.py` script (in this directory) will query this server to get predictions.
+The `baseline` directory includes an example implementation in `serve.py`.
+We have chosen this format so that we can create interactive demos for all submitted models.
