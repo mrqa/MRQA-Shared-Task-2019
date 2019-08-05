@@ -19,6 +19,8 @@ if __name__ == "__main__":
     file_path = cached_path(args.model)
     archive = load_archive(file_path, cuda_device=args.cuda_device)
     predictor = Predictor.from_archive(archive, 'mrqa_predictor')
+    predictor._dataset_reader._is_training = False
+
     all_predictions = {}
     contexts = []
     single_file_path_cached = cached_path(args.dataset)

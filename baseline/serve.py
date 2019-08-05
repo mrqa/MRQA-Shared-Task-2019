@@ -15,6 +15,7 @@ if __name__ == "__main__":
     file_path = cached_path(args.model)
     archive = load_archive(file_path, cuda_device=args.cuda_device)
     predictor = Predictor.from_archive(archive, 'mrqa_predictor')
+    predictor._dataset_reader._is_training = False
 
     app = flask.Flask(__name__)
 
