@@ -82,14 +82,12 @@ A span is judged to be an exact match if it matches the answer string after perf
 
 | Dataset | Download | MD5SUM | Examples |
 | :-----: | :-------:| :----: | :------: |
-| [BioASQ](http://bioasq.org/) | [Link](http://participants-area.bioasq.org/MRQA2019/) | 6408dc4fcf258535d0ea8b125bba5fbb | 1,504 |
+| [BioASQ](http://bioasq.org/) | [Link](http://participants-area.bioasq.org/MRQA2019/) | 70752a39beb826a022ab21353cb66e54 | 1,504 |
 | [DROP](https://arxiv.org/abs/1903.00161) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/DROP.jsonl.gz) | 070eb2ac92d2b2fc1b99abeda97ac37a | 1,503 |
 | [DuoRC](https://arxiv.org/abs/1804.07927) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/DuoRC.ParaphraseRC.jsonl.gz) |b325c0ad2fa10e699136561ee70c5ddd | 1,501 |
 | [RACE](https://arxiv.org/abs/1704.04683) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/RACE.jsonl.gz) | ba8063647955bbb3ba63e9b17d82e815 | 674 |
 | [RelationExtraction](https://arxiv.org/abs/1706.04115) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/RelationExtraction.jsonl.gz) | 266be75954fcb31b9dbfa9be7a61f088 | 2,948|
 | [TextbookQA](http://ai2-website.s3.amazonaws.com/publications/CVPR17_TQA.pdf) | [Link](https://s3.us-east-2.amazonaws.com/mrqa/release/v2/dev/TextbookQA.jsonl.gz) | 8b52d21381d841f8985839ec41a6c7f7 | 1,503 |
-
-*(7/12/2019 updates to BioASQ still pending.)*
 
 **Note:** As previously mentioned, the out-of-domain dataset have been modified from their original settings to fit the unified MRQA Shared Task paradigm (see [MRQA Format](#mrqa-format)). Once again, at a high level, the following two major modifications have been made:
 
