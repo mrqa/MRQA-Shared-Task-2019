@@ -241,3 +241,12 @@ Note that submissions should start a local server that accepts POST requests of 
 The official `predict_server.py` script (in this directory) will query this server to get predictions.
 The `baseline` directory includes an example implementation in `serve.py`.
 We have chosen this format so that we can create interactive demos for all submitted models.
+
+## Citation
+
+@inproceedings{fisch2019mrqa,
+    title={MRQA 2019 Shared Task: Evaluating Generalization in Reading Comprehension},
+    author={Adam Fisch and Alon Talmor and Robin Jia and Minjoon Seo and Eunsol Choi and Danqi Chen},
+    booktitle={Proceedings of 2nd Machine Reading for Reading Comprehension (MRQA) Workshop at EMNLP},
+    year={2019},
+}
