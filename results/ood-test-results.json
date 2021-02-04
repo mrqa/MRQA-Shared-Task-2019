@@ -1,0 +1,1973 @@
+{
+    "config": {
+        "allow_multiple_models": true,
+        "allow_orphans": true,
+        "count_failed_submissions": true,
+        "evaluate": {
+            "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+            "dependencies": [
+                {
+                    "child_path": "eval.py",
+                    "parent_path": "",
+                    "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                },
+                {
+                    "child_path": "data_dir",
+                    "parent_path": "",
+                    "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                },
+                {
+                    "child_path": "predictions.json",
+                    "parent_path": "",
+                    "parent_uuid": "{predict}"
+                }
+            ],
+            "metadata": {
+                "request_docker_image": "robinjia/mrqa:0.1"
+            },
+            "tag": "mrqa2019-hidden-test-eval"
+        },
+        "host": "https://worksheets.codalab.org",
+        "log_worksheet_uuid": "0xbe5f6ba1dd1c47ab8fe68c9b885f3e22",
+        "make_predictions_public": false,
+        "max_leaderboard_size": 10000,
+        "max_submissions_per_period": 5,
+        "max_submissions_total": 20,
+        "metadata": {
+            "name": "MRQA 2019 Shared Task Competition Leaderboard"
+        },
+        "predict": {
+            "depth": 10,
+            "metadata": {
+                "request_memory": "20G",
+                "request_network": false
+            },
+            "mimic": [
+                {
+                    "new": "0xe7a0c3b50d4b42f9a7c3a211adea734a",
+                    "old": "0x51ce3f58fce84197ad42d4414e3ec086"
+                }
+            ],
+            "tag": "mrqa2019-lb-predict"
+        },
+        "quota_period_seconds": 86400,
+        "refresh_period_seconds": 60,
+        "score_specs": [
+            {
+                "key": "/eval_BioASQ.json:f1",
+                "name": "BioASQ_f1"
+            },
+            {
+                "key": "/eval_BioASQ.json:exact_match",
+                "name": "BioASQ_em"
+            },
+            {
+                "key": "/eval_BioProcess.json:f1",
+                "name": "BioProcess_f1"
+            },
+            {
+                "key": "/eval_BioProcess.json:exact_match",
+                "name": "BioProcess_em"
+            },
+            {
+                "key": "/eval_ComplexWebQuestions.json:f1",
+                "name": "ComplexWebQuestions_f1"
+            },
+            {
+                "key": "/eval_ComplexWebQuestions.json:exact_match",
+                "name": "ComplexWebQuestions_em"
+            },
+            {
+                "key": "/eval_DROP.json:f1",
+                "name": "DROP_f1"
+            },
+            {
+                "key": "/eval_DROP.json:exact_match",
+                "name": "DROP_em"
+            },
+            {
+                "key": "/eval_DuoRC.ParaphraseRC.json:f1",
+                "name": "DuoRC.ParaphraseRC_f1"
+            },
+            {
+                "key": "/eval_DuoRC.ParaphraseRC.json:exact_match",
+                "name": "DuoRC.ParaphraseRC_em"
+            },
+            {
+                "key": "/eval_MCTest.json:f1",
+                "name": "MCTest_f1"
+            },
+            {
+                "key": "/eval_MCTest.json:exact_match",
+                "name": "MCTest_em"
+            },
+            {
+                "key": "/eval_QAMR.json:f1",
+                "name": "QAMR_f1"
+            },
+            {
+                "key": "/eval_QAMR.json:exact_match",
+                "name": "QAMR_em"
+            },
+            {
+                "key": "/eval_QAST.json:f1",
+                "name": "QAST_f1"
+            },
+            {
+                "key": "/eval_QAST.json:exact_match",
+                "name": "QAST_em"
+            },
+            {
+                "key": "/eval_RACE.json:f1",
+                "name": "RACE_f1"
+            },
+            {
+                "key": "/eval_RACE.json:exact_match",
+                "name": "RACE_em"
+            },
+            {
+                "key": "/eval_RelationExtraction.json:f1",
+                "name": "RelationExtraction_f1"
+            },
+            {
+                "key": "/eval_RelationExtraction.json:exact_match",
+                "name": "RelationExtraction_em"
+            },
+            {
+                "key": "/eval_TREC.json:f1",
+                "name": "TREC_f1"
+            },
+            {
+                "key": "/eval_TREC.json:exact_match",
+                "name": "TREC_em"
+            },
+            {
+                "key": "/eval_TextbookQA.json:f1",
+                "name": "TextbookQA_f1"
+            },
+            {
+                "key": "/eval_TextbookQA.json:exact_match",
+                "name": "TextbookQA_em"
+            }
+        ],
+        "submission_tag": "mrqa2019-submit"
+    },
+    "leaderboard": [
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0xdd86f2addfe24a219612695d222bdac4 \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-memory 2g --request-docker-image robinjia/mrqa:0.1 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": "0x5de4b68182389ae7f4e84f666899e2f2365e5a0f",
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0x8ff174847bf74abbb6edfd4703d27123",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0x8ff174847bf74abbb6edfd4703d27123",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0x8ff174847bf74abbb6edfd4703d27123",
+                        "parent_name": "hongyu03-predictions-DNET-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xdd86f2addfe24a219612695d222bdac4"
+                    }
+                ],
+                "id": "0x8ff174847bf74abbb6edfd4703d27123",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1569870655,
+                    "data_size": 4807,
+                    "description": "{\"submit_id\": \"0x89584c99477e48559fed718f5f7d990c\", \"predict_id\": \"0xdd86f2addfe24a219612695d222bdac4\", \"submitter_id\": \"0x7cdd41d2ee8d4042a944e8f679598061\"}",
+                    "docker_image": "robinjia/mrqa@sha256:80aa89c641e18d02f1e6c9ca43e8e161d3d893596bf5e3430d04986c27a07bf3",
+                    "exitcode": 0,
+                    "last_updated": 1569886953,
+                    "name": "hongyu03-predictions-DNET-results",
+                    "remote": "jagupard22.stanford.edu(63852)",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1569886901,
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ],
+                    "time": 32.67090320587158
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x8ff174847bf74abbb6edfd4703d27123"
+            },
+            "scores": {
+                "BioASQ_em": 61.19894598155468,
+                "BioASQ_f1": 75.32700034104519,
+                "BioProcess_em": 62.10045662100457,
+                "BioProcess_f1": 75.59348029533365,
+                "ComplexWebQuestions_em": 61.333333333333336,
+                "ComplexWebQuestions_f1": 68.33359788359775,
+                "DROP_em": 50.69953364423718,
+                "DROP_f1": 61.532726054520296,
+                "DuoRC.ParaphraseRC_em": 54.75715236194278,
+                "DuoRC.ParaphraseRC_f1": 66.55116045430029,
+                "MCTest_em": 67.82145236508994,
+                "MCTest_f1": 80.7659461798034,
+                "QAMR_em": 60.498687664041995,
+                "QAMR_f1": 76.12965293208444,
+                "QAST_em": 75.0,
+                "QAST_f1": 88.83130806815016,
+                "RACE_em": 39.94673768308922,
+                "RACE_f1": 53.49333947627125,
+                "RelationExtraction_em": 80.06666666666666,
+                "RelationExtraction_f1": 88.97717116217117,
+                "TREC_em": 51.811949069539665,
+                "TREC_f1": 66.83929685957418,
+                "TextbookQA_em": 57.228116710875334,
+                "TextbookQA_f1": 67.62992198231164
+            },
+            "submission": {
+                "created": 1569847398,
+                "description": "D-NET (Baidu)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "hongyu03"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0x0b56977291434b47a7d6889b7fdce3a3 \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-memory 2g --request-docker-image robinjia/mrqa:0.1 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": "0x41e8d7e9b95b4dc663fea57cc1716ea253e15a7e",
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0x41bf62b90c4d44918c6b0800cbb7f7ae",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0x41bf62b90c4d44918c6b0800cbb7f7ae",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0x41bf62b90c4d44918c6b0800cbb7f7ae",
+                        "parent_name": "hongyu-predictions-BASELINE-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x0b56977291434b47a7d6889b7fdce3a3"
+                    }
+                ],
+                "id": "0x41bf62b90c4d44918c6b0800cbb7f7ae",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565536758,
+                    "data_size": 4803,
+                    "description": "{\"submit_id\": \"0x0e1e0688700b46fa975bbd3c4602e4fb\", \"predict_id\": \"0x0b56977291434b47a7d6889b7fdce3a3\", \"submitter_id\": \"0x4486b562f09345298389536e066eb4db\"}",
+                    "docker_image": "robinjia/mrqa@sha256:80aa89c641e18d02f1e6c9ca43e8e161d3d893596bf5e3430d04986c27a07bf3",
+                    "exitcode": 0,
+                    "last_updated": 1565558719,
+                    "name": "hongyu-predictions-BASELINE-results",
+                    "remote": "jagupard23.stanford.edu",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1565558661,
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ],
+                    "time": 51.7700240612
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x41bf62b90c4d44918c6b0800cbb7f7ae"
+            },
+            "scores": {
+                "BioASQ_em": 60.408432147562586,
+                "BioASQ_f1": 74.79847595353448,
+                "BioProcess_em": 60.730593607305934,
+                "BioProcess_f1": 76.05046279523569,
+                "ComplexWebQuestions_em": 61.4,
+                "ComplexWebQuestions_f1": 67.75830687830678,
+                "DROP_em": 51.299133910726184,
+                "DROP_f1": 61.521588501955264,
+                "DuoRC.ParaphraseRC_em": 55.28942115768463,
+                "DuoRC.ParaphraseRC_f1": 66.5913807577537,
+                "MCTest_em": 68.08794137241838,
+                "MCTest_f1": 80.6447103163316,
+                "QAMR_em": 61.5485564304462,
+                "QAMR_f1": 76.24343396534252,
+                "QAST_em": 76.36363636363636,
+                "QAST_f1": 89.46148092559574,
+                "RACE_em": 39.41411451398136,
+                "RACE_f1": 53.72641577133608,
+                "RelationExtraction_em": 79.93333333333334,
+                "RelationExtraction_f1": 88.89870148370149,
+                "TREC_em": 52.4975514201763,
+                "TREC_f1": 66.83802964283412,
+                "TextbookQA_em": 57.69230769230769,
+                "TextbookQA_f1": 68.04602276369894
+            },
+            "submission": {
+                "created": 1564972177,
+                "description": "BASELINE (Anonymous)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "hongyu"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0x15c583056c684ed6aa11a40fc312f88a \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-memory 2g --request-docker-image robinjia/mrqa:0.1 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": "0x383fe1bb9065f30bf72ab2479e23353fa3067e12",
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0xbc807e33ee46404a8d975c1ed164ae85",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0xbc807e33ee46404a8d975c1ed164ae85",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0xbc807e33ee46404a8d975c1ed164ae85",
+                        "parent_name": "MRQA-hltc-predictions-mrqa-hltc-model-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x15c583056c684ed6aa11a40fc312f88a"
+                    }
+                ],
+                "id": "0xbc807e33ee46404a8d975c1ed164ae85",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565422456,
+                    "data_size": 4823,
+                    "description": "{\"submit_id\": \"0xf2b854732dbf49908ce19db6b9e85294\", \"predict_id\": \"0x15c583056c684ed6aa11a40fc312f88a\", \"submitter_id\": \"0xee7d568a632a4dd4a730dbb143c9864c\"}",
+                    "docker_image": "robinjia/mrqa@sha256:80aa89c641e18d02f1e6c9ca43e8e161d3d893596bf5e3430d04986c27a07bf3",
+                    "exitcode": 0,
+                    "last_updated": 1565442796,
+                    "name": "MRQA-hltc-predictions-mrqa-hltc-model-results",
+                    "remote": "jagupard24.stanford.edu",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1565442718,
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ],
+                    "time": 70.9803850651
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xbc807e33ee46404a8d975c1ed164ae85"
+            },
+            "scores": {
+                "BioASQ_em": 59.617918313570485,
+                "BioASQ_f1": 74.01517968604847,
+                "BioProcess_em": 56.16438356164384,
+                "BioProcess_f1": 72.91070891024239,
+                "ComplexWebQuestions_em": 54.733333333333334,
+                "ComplexWebQuestions_f1": 61.391269841269725,
+                "DROP_em": 41.039307128580944,
+                "DROP_f1": 51.113421254406475,
+                "DuoRC.ParaphraseRC_em": 51.69660678642715,
+                "DuoRC.ParaphraseRC_f1": 63.14174749218371,
+                "MCTest_em": 64.55696202531645,
+                "MCTest_f1": 78.72123004083527,
+                "QAMR_em": 56.36482939632546,
+                "QAMR_f1": 72.46796098306284,
+                "QAST_em": 75.9090909090909,
+                "QAST_f1": 88.79992278676488,
+                "RACE_em": 37.217043941411454,
+                "RACE_f1": 50.45679668318295,
+                "RelationExtraction_em": 76.46666666666667,
+                "RelationExtraction_f1": 86.22522255522256,
+                "TREC_em": 49.853085210577866,
+                "TREC_f1": 63.355700340365864,
+                "TextbookQA_em": 55.50397877984085,
+                "TextbookQA_f1": 65.17771709407454
+            },
+            "submission": {
+                "created": 1565175852,
+                "description": "HLTC-MRQA (HKUST)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "MRQA-hltc"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0xf0aa9a5e4fe442b2a7e7c4aadc8ab03e \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-memory 2g --request-docker-image robinjia/mrqa:0.1 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": "0x110eb8875505e044f3c705385bb406492ec44fb1",
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0xfdcb8dc10dce42fdbfad229a1ef7aba5",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0xfdcb8dc10dce42fdbfad229a1ef7aba5",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0xfdcb8dc10dce42fdbfad229a1ef7aba5",
+                        "parent_name": "zpchen_8-predictions-FT_XLNet-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xf0aa9a5e4fe442b2a7e7c4aadc8ab03e"
+                    }
+                ],
+                "id": "0xfdcb8dc10dce42fdbfad229a1ef7aba5",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565422437,
+                    "data_size": 4790,
+                    "description": "{\"submit_id\": \"0x65f1f97aaf9b4b62a5c4f0a385d8a349\", \"predict_id\": \"0xf0aa9a5e4fe442b2a7e7c4aadc8ab03e\", \"submitter_id\": \"0xc2a7a5bede174c179ef0aab4337da24d\"}",
+                    "docker_image": "robinjia/mrqa@sha256:80aa89c641e18d02f1e6c9ca43e8e161d3d893596bf5e3430d04986c27a07bf3",
+                    "exitcode": 0,
+                    "last_updated": 1565438398,
+                    "name": "zpchen_8-predictions-FT_XLNet-results",
+                    "remote": "jagupard24.stanford.edu",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1565438315,
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ],
+                    "time": 74.877436161
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xfdcb8dc10dce42fdbfad229a1ef7aba5"
+            },
+            "scores": {
+                "BioASQ_em": 59.28853754940712,
+                "BioASQ_f1": 72.9108512297089,
+                "BioProcess_em": 62.55707762557078,
+                "BioProcess_f1": 75.23762842224185,
+                "ComplexWebQuestions_em": 54.8,
+                "ComplexWebQuestions_f1": 62.67810966810955,
+                "DROP_em": 48.034643570952696,
+                "DROP_f1": 58.2869402016142,
+                "DuoRC.ParaphraseRC_em": 52.69461077844311,
+                "DuoRC.ParaphraseRC_f1": 63.77921927900384,
+                "MCTest_em": 65.95602931379081,
+                "MCTest_f1": 79.60597073572325,
+                "QAMR_em": 56.496062992125985,
+                "QAMR_f1": 73.35944134682553,
+                "QAST_em": 76.81818181818181,
+                "QAST_f1": 90.03839114675026,
+                "RACE_em": 39.41411451398136,
+                "RACE_f1": 53.83847640956922,
+                "RelationExtraction_em": 79.0,
+                "RelationExtraction_f1": 87.15174695674696,
+                "TREC_em": 51.811949069539665,
+                "TREC_f1": 65.4762123322836,
+                "TextbookQA_em": 53.58090185676392,
+                "TextbookQA_f1": 64.14659497629258
+            },
+            "submission": {
+                "created": 1565157560,
+                "description": "FT_XLNet (HIT)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "zpchen_8"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0x4fd64421d2774057addb4c97e994888f \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-memory 2g --request-docker-image robinjia/mrqa:0.1 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": "0x3357c68e3ace7be9c613d4b720b501239c079f15",
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0x7850a4225c2448188bf9e21d78398da8",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0x7850a4225c2448188bf9e21d78398da8",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0x7850a4225c2448188bf9e21d78398da8",
+                        "parent_name": "OyvindT-predictions-BERTCasedWW-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x4fd64421d2774057addb4c97e994888f"
+                    }
+                ],
+                "id": "0x7850a4225c2448188bf9e21d78398da8",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565422492,
+                    "data_size": 4804,
+                    "description": "{\"submit_id\": \"0x456676760aae452cb44ade00bb515b64\", \"predict_id\": \"0x4fd64421d2774057addb4c97e994888f\", \"submitter_id\": \"0x2ec1a7b6a8c749b28f9ce349acb29812\"}",
+                    "docker_image": "robinjia/mrqa@sha256:80aa89c641e18d02f1e6c9ca43e8e161d3d893596bf5e3430d04986c27a07bf3",
+                    "exitcode": 0,
+                    "last_updated": 1565441305,
+                    "name": "OyvindT-predictions-BERTCasedWW-results",
+                    "remote": "jagupard24.stanford.edu",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1565441223,
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ],
+                    "time": 76.2405760288
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x7850a4225c2448188bf9e21d78398da8"
+            },
+            "scores": {
+                "BioASQ_em": 57.7733860342556,
+                "BioASQ_f1": 72.88026417924783,
+                "BioProcess_em": 56.16438356164384,
+                "BioProcess_f1": 71.52707187759566,
+                "ComplexWebQuestions_em": 52.4,
+                "ComplexWebQuestions_f1": 60.68618364009858,
+                "DROP_em": 43.104596935376414,
+                "DROP_f1": 53.24480295123493,
+                "DuoRC.ParaphraseRC_em": 42.315369261477045,
+                "DuoRC.ParaphraseRC_f1": 53.46610853787701,
+                "MCTest_em": 63.82411725516322,
+                "MCTest_f1": 76.4142095590013,
+                "QAMR_em": 56.10236220472441,
+                "QAMR_f1": 71.51383235884953,
+                "QAST_em": 69.54545454545455,
+                "QAST_f1": 85.34482233166442,
+                "RACE_em": 35.01997336884155,
+                "RACE_f1": 48.702755154386814,
+                "RelationExtraction_em": 78.53333333333333,
+                "RelationExtraction_f1": 87.92673153492336,
+                "TREC_em": 43.584720861900095,
+                "TREC_f1": 61.5935153684837,
+                "TextbookQA_em": 43.89920424403183,
+                "TextbookQA_f1": 51.88642080591925
+            },
+            "submission": {
+                "created": 1564375166,
+                "description": "BERT-cased-whole-word baseline (Aristo @ AI2)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "OyvindT"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0x0241fcda661344df8503134e54a06054 \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-memory 2g --request-docker-image robinjia/mrqa:0.1 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": "0xc86b0676c9726da42c36d4dd4bbd6c42e21ccf8a",
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0xf76c16af5d574f53821088ab5fcea7e3",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0xf76c16af5d574f53821088ab5fcea7e3",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0xf76c16af5d574f53821088ab5fcea7e3",
+                        "parent_name": "tuzhucheng-predictions-Delphi-Model-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x0241fcda661344df8503134e54a06054"
+                    }
+                ],
+                "id": "0xf76c16af5d574f53821088ab5fcea7e3",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565422415,
+                    "data_size": 4805,
+                    "description": "{\"submit_id\": \"0x9a53e9c50f1244699c4a24aee483bd4c\", \"predict_id\": \"0x0241fcda661344df8503134e54a06054\", \"submitter_id\": \"0x7a642a4f0d8b426d835e65b5710e2be3\"}",
+                    "docker_image": "robinjia/mrqa@sha256:80aa89c641e18d02f1e6c9ca43e8e161d3d893596bf5e3430d04986c27a07bf3",
+                    "exitcode": 0,
+                    "last_updated": 1565430435,
+                    "name": "tuzhucheng-predictions-Delphi-Model-results",
+                    "remote": "jagupard24.stanford.edu",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1565430365,
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ],
+                    "time": 62.7090148926
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xf76c16af5d574f53821088ab5fcea7e3"
+            },
+            "scores": {
+                "BioASQ_em": 60.276679841897234,
+                "BioASQ_f1": 71.9821344334032,
+                "BioProcess_em": 58.9041095890411,
+                "BioProcess_f1": 74.20985177399785,
+                "ComplexWebQuestions_em": 55.13333333333333,
+                "ComplexWebQuestions_f1": 62.27058201058191,
+                "DROP_em": 48.50099933377748,
+                "DROP_f1": 58.90128354630412,
+                "DuoRC.ParaphraseRC_em": 53.293413173652695,
+                "DuoRC.ParaphraseRC_f1": 63.36017701691295,
+                "MCTest_em": 67.95469686875417,
+                "MCTest_f1": 80.17407276577114,
+                "QAMR_em": 60.958005249343834,
+                "QAMR_f1": 75.24528303948118,
+                "QAST_em": 78.63636363636364,
+                "QAST_f1": 89.87231335915544,
+                "RACE_em": 39.34753661784288,
+                "RACE_f1": 53.865411707772516,
+                "RelationExtraction_em": 79.2,
+                "RelationExtraction_f1": 87.84978132978132,
+                "TREC_em": 54.94613124387855,
+                "TREC_f1": 65.77643054268486,
+                "TextbookQA_em": 56.49867374005305,
+                "TextbookQA_f1": 65.54244717649074
+            },
+            "submission": {
+                "created": 1565420255,
+                "description": "Delphi (Apple)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "tuzhucheng"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0x0534fc26e4c64c8b9541773d091b24c0 \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-memory 2g --request-docker-image robinjia/mrqa:0.1 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": "0x6fb46d53500806f135d7cac25dca1486ece989e2",
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0x563834231b0c4ba8b18edd8ce0addb2b",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0x563834231b0c4ba8b18edd8ce0addb2b",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0x563834231b0c4ba8b18edd8ce0addb2b",
+                        "parent_name": "motoki-predictions-XERO-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x0534fc26e4c64c8b9541773d091b24c0"
+                    }
+                ],
+                "id": "0x563834231b0c4ba8b18edd8ce0addb2b",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565422472,
+                    "data_size": 4781,
+                    "description": "{\"submit_id\": \"0x88c3c496efa7429d9460953c72a19e15\", \"predict_id\": \"0x0534fc26e4c64c8b9541773d091b24c0\", \"submitter_id\": \"0x8669cd2257b04c33be13089d6ed89389\"}",
+                    "docker_image": "robinjia/mrqa@sha256:80aa89c641e18d02f1e6c9ca43e8e161d3d893596bf5e3430d04986c27a07bf3",
+                    "exitcode": 0,
+                    "last_updated": 1565443872,
+                    "name": "motoki-predictions-XERO-results",
+                    "remote": "jagupard24.stanford.edu",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1565443821,
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ],
+                    "time": 43.6617059708
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x563834231b0c4ba8b18edd8ce0addb2b"
+            },
+            "scores": {
+                "BioASQ_em": 53.16205533596838,
+                "BioASQ_f1": 68.80814030499505,
+                "BioProcess_em": 47.945205479452056,
+                "BioProcess_f1": 68.42531254849493,
+                "ComplexWebQuestions_em": 52.6,
+                "ComplexWebQuestions_f1": 61.159573124443725,
+                "DROP_em": 37.70819453697535,
+                "DROP_f1": 47.53577401910395,
+                "DuoRC.ParaphraseRC_em": 51.56353958749168,
+                "DuoRC.ParaphraseRC_f1": 62.94328382488993,
+                "MCTest_em": 59.89340439706862,
+                "MCTest_f1": 73.12095317044847,
+                "QAMR_em": 54.330708661417326,
+                "QAMR_f1": 71.43201437522013,
+                "QAST_em": 65.0,
+                "QAST_f1": 84.25461323188594,
+                "RACE_em": 31.89081225033289,
+                "RACE_f1": 45.02935253818425,
+                "RelationExtraction_em": 78.6,
+                "RelationExtraction_f1": 87.6687469618504,
+                "TREC_em": 42.703232125367286,
+                "TREC_f1": 59.987535657247406,
+                "TextbookQA_em": 53.51458885941645,
+                "TextbookQA_f1": 62.89666975508134
+            },
+            "submission": {
+                "created": 1565260439,
+                "description": "XERO(Fuji Xerox)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "motoki"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0x7d41573a1c8e43a1b62c20cfd39ffbca \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-memory 2g --request-docker-image robinjia/mrqa:0.1 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": "0x36c06cdabb1b59ddd27f11f91d2089688ec97458",
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0x900028aff1be4fcf933c0f8cc4cb4768",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0x900028aff1be4fcf933c0f8cc4cb4768",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0x900028aff1be4fcf933c0f8cc4cb4768",
+                        "parent_name": "robinjia-predictions-mrqa-large-base-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x7d41573a1c8e43a1b62c20cfd39ffbca"
+                    }
+                ],
+                "id": "0x900028aff1be4fcf933c0f8cc4cb4768",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565422427,
+                    "data_size": 4807,
+                    "description": "{\"submit_id\": \"0xc85a8f53a16b44efbbc03548910ade8e\", \"predict_id\": \"0x7d41573a1c8e43a1b62c20cfd39ffbca\", \"submitter_id\": \"20891\"}",
+                    "docker_image": "robinjia/mrqa@sha256:80aa89c641e18d02f1e6c9ca43e8e161d3d893596bf5e3430d04986c27a07bf3",
+                    "exitcode": 0,
+                    "last_updated": 1565426512,
+                    "name": "robinjia-predictions-mrqa-large-base-results",
+                    "remote": "jagupard24.stanford.edu",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1565426434,
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ],
+                    "time": 71.3632359505
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x900028aff1be4fcf933c0f8cc4cb4768"
+            },
+            "scores": {
+                "BioASQ_em": 49.736495388669304,
+                "BioASQ_f1": 66.56842120948964,
+                "BioProcess_em": 46.118721461187214,
+                "BioProcess_f1": 63.63164058846657,
+                "ComplexWebQuestions_em": 51.8,
+                "ComplexWebQuestions_f1": 59.05164853864914,
+                "DROP_em": 33.91072618254497,
+                "DROP_f1": 43.495365544952534,
+                "DuoRC.ParaphraseRC_em": 43.379906852960744,
+                "DuoRC.ParaphraseRC_f1": 55.13757453650101,
+                "MCTest_em": 59.49367088607595,
+                "MCTest_f1": 72.20335242046511,
+                "QAMR_em": 48.22834645669291,
+                "QAMR_f1": 67.39302506256976,
+                "QAST_em": 62.27272727272727,
+                "QAST_f1": 80.78767006518204,
+                "RACE_em": 28.96138482023968,
+                "RACE_f1": 41.41517860977298,
+                "RelationExtraction_em": 72.53333333333333,
+                "RelationExtraction_f1": 84.68108320873029,
+                "TREC_em": 36.33692458374143,
+                "TREC_f1": 53.55145328561617,
+                "TextbookQA_em": 45.62334217506631,
+                "TextbookQA_f1": 53.22000491200654
+            },
+            "submission": {
+                "created": 1565417353,
+                "description": "BERT large baseline (MRQA Organizers)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 2,
+                "public": false,
+                "user_name": "robinjia"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0xb0c360c7a5f646cd9c6a01779cdf74e1 \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-memory 2g --request-docker-image robinjia/mrqa:0.1 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": "0x58a96501b9d2a839e3082faa1bf57dfb801af6a2",
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0x3dfcafabd42c4353a42256ec17482e0b",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0x3dfcafabd42c4353a42256ec17482e0b",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0x3dfcafabd42c4353a42256ec17482e0b",
+                        "parent_name": "ZHO-predictions-Bert-Multi-Finetune-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xb0c360c7a5f646cd9c6a01779cdf74e1"
+                    }
+                ],
+                "id": "0x3dfcafabd42c4353a42256ec17482e0b",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565422509,
+                    "data_size": 4789,
+                    "description": "{\"submit_id\": \"0x5716df3b477a452a997bcebb9e179c89\", \"predict_id\": \"0xb0c360c7a5f646cd9c6a01779cdf74e1\", \"submitter_id\": \"0x3cdfa6ad7bad44758f232263d457e5d6\"}",
+                    "docker_image": "robinjia/mrqa@sha256:80aa89c641e18d02f1e6c9ca43e8e161d3d893596bf5e3430d04986c27a07bf3",
+                    "exitcode": 0,
+                    "last_updated": 1565445015,
+                    "name": "ZHO-predictions-Bert-Multi-Finetune-results",
+                    "remote": "jagupard24.stanford.edu",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1565444975,
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ],
+                    "time": 32.7391629219
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x3dfcafabd42c4353a42256ec17482e0b"
+            },
+            "scores": {
+                "BioASQ_em": 48.68247694334651,
+                "BioASQ_f1": 64.84093616149572,
+                "BioProcess_em": 43.37899543378995,
+                "BioProcess_f1": 58.74666449075882,
+                "ComplexWebQuestions_em": 49.6,
+                "ComplexWebQuestions_f1": 57.6980398353451,
+                "DROP_em": 30.379746835443036,
+                "DROP_f1": 40.31814112254391,
+                "DuoRC.ParaphraseRC_em": 43.64604125083167,
+                "DuoRC.ParaphraseRC_f1": 54.69308418450694,
+                "MCTest_em": 59.2271818787475,
+                "MCTest_f1": 72.22502782247118,
+                "QAMR_em": 48.62204724409449,
+                "QAMR_f1": 67.00638572658539,
+                "QAST_em": 60.0,
+                "QAST_f1": 80.1178997769907,
+                "RACE_em": 26.431424766977365,
+                "RACE_f1": 38.69054632257228,
+                "RelationExtraction_em": 75.26666666666667,
+                "RelationExtraction_f1": 84.97309497691855,
+                "TREC_em": 34.57394711067581,
+                "TREC_f1": 52.251870761960205,
+                "TextbookQA_em": 44.03183023872679,
+                "TextbookQA_f1": 52.3683560253637
+            },
+            "submission": {
+                "created": 1565082513,
+                "description": "Bert-Multi-Finetune (BLCU)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 3,
+                "public": true,
+                "user_name": "ZHO"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0xe52617ad11264567b59892033debc36c \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-memory 2g --request-docker-image robinjia/mrqa:0.1 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": "0x41bca142cd8be53dceb826b79c2d25f6c4500800",
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0xf353820c38ac4de0ba3e76696044f562",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0xf353820c38ac4de0ba3e76696044f562",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0xf353820c38ac4de0ba3e76696044f562",
+                        "parent_name": "ZHO-predictions-bert-multi-finetune-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xe52617ad11264567b59892033debc36c"
+                    }
+                ],
+                "id": "0xf353820c38ac4de0ba3e76696044f562",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565422500,
+                    "data_size": 4823,
+                    "description": "{\"submit_id\": \"0x7295379e8ed54cd7baffa87d094a7cd6\", \"predict_id\": \"0xe52617ad11264567b59892033debc36c\", \"submitter_id\": \"0x3cdfa6ad7bad44758f232263d457e5d6\"}",
+                    "docker_image": "robinjia/mrqa@sha256:80aa89c641e18d02f1e6c9ca43e8e161d3d893596bf5e3430d04986c27a07bf3",
+                    "exitcode": 0,
+                    "last_updated": 1565443613,
+                    "name": "ZHO-predictions-bert-multi-finetune-results",
+                    "remote": "vm-clws-prod-gpuworker-2",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1565443486,
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ],
+                    "time": 29.7305967808
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xf353820c38ac4de0ba3e76696044f562"
+            },
+            "scores": {
+                "BioASQ_em": 48.616600790513836,
+                "BioASQ_f1": 64.66892620687707,
+                "BioProcess_em": 43.37899543378995,
+                "BioProcess_f1": 58.74666449075882,
+                "ComplexWebQuestions_em": 45.93333333333333,
+                "ComplexWebQuestions_f1": 54.63560309023866,
+                "DROP_em": 30.712858094603597,
+                "DROP_f1": 40.69566721625922,
+                "DuoRC.ParaphraseRC_em": 37.724550898203596,
+                "DuoRC.ParaphraseRC_f1": 48.23118706735367,
+                "MCTest_em": 59.293804130579616,
+                "MCTest_f1": 72.29165007430332,
+                "QAMR_em": 48.62204724409449,
+                "QAMR_f1": 67.00638572658539,
+                "QAST_em": 59.54545454545455,
+                "QAST_f1": 78.69365735274826,
+                "RACE_em": 26.231691078561916,
+                "RACE_f1": 38.364114205424336,
+                "RelationExtraction_em": 75.26666666666667,
+                "RelationExtraction_f1": 84.97962178344535,
+                "TREC_em": 33.10479921645446,
+                "TREC_f1": 51.65210280282549,
+                "TextbookQA_em": 35.212201591511935,
+                "TextbookQA_f1": 42.18725173449936
+            },
+            "submission": {
+                "created": 1564986145,
+                "description": "bert-multi-finetune (BLCU)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 3,
+                "public": true,
+                "user_name": "ZHO"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0xc05943c7f23d4f47b5493fad975e90bc \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-memory 2g --request-docker-image robinjia/mrqa:0.1 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": "0x187151d1c8500fdf94f93261806101ce2c8c4343",
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0x781ce7b76baa4221861a64968481d52f",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0x781ce7b76baa4221861a64968481d52f",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0x781ce7b76baa4221861a64968481d52f",
+                        "parent_name": "ddua-predictions-PAL_IN_DOMAIN-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xc05943c7f23d4f47b5493fad975e90bc"
+                    }
+                ],
+                "id": "0x781ce7b76baa4221861a64968481d52f",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565456498,
+                    "data_size": 4792,
+                    "description": "{\"submit_id\": \"0x5c7302f3ac624abc92fba65b4d4013c9\", \"predict_id\": \"0xc05943c7f23d4f47b5493fad975e90bc\", \"submitter_id\": \"0x4044e3ce4ac845ce9fa1703cefefa512\"}",
+                    "docker_image": "robinjia/mrqa@sha256:80aa89c641e18d02f1e6c9ca43e8e161d3d893596bf5e3430d04986c27a07bf3",
+                    "exitcode": 0,
+                    "last_updated": 1565457265,
+                    "name": "ddua-predictions-PAL_IN_DOMAIN-results",
+                    "remote": "vm-clws-prod-worker-1",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1565457231,
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ],
+                    "time": 26.8764081001
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x781ce7b76baa4221861a64968481d52f"
+            },
+            "scores": {
+                "BioASQ_em": 44.66403162055336,
+                "BioASQ_f1": 60.8614021263431,
+                "BioProcess_em": 46.118721461187214,
+                "BioProcess_f1": 61.75894807432805,
+                "ComplexWebQuestions_em": 46.6,
+                "ComplexWebQuestions_f1": 53.75279850944445,
+                "DROP_em": 29.247168554297136,
+                "DROP_f1": 38.56702659745751,
+                "DuoRC.ParaphraseRC_em": 37.5249500998004,
+                "DuoRC.ParaphraseRC_f1": 47.33886835089666,
+                "MCTest_em": 53.56429047301799,
+                "MCTest_f1": 66.1896355574102,
+                "QAMR_em": 49.54068241469816,
+                "QAMR_f1": 65.16000400061671,
+                "QAST_em": 51.36363636363637,
+                "QAST_f1": 73.84930927658198,
+                "RACE_em": 26.431424766977365,
+                "RACE_f1": 38.66908543634327,
+                "RelationExtraction_em": 72.6,
+                "RelationExtraction_f1": 83.28847486008351,
+                "TREC_em": 41.038197845249755,
+                "TREC_f1": 54.79846477712868,
+                "TextbookQA_em": 32.89124668435013,
+                "TextbookQA_f1": 41.022001178297586
+            },
+            "submission": {
+                "created": 1564439134,
+                "description": "PAL IN DOMAIN - UCI",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "ddua"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0x84b3ef7a682241e3844ba137c0555b04 \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-memory 2g --request-docker-image robinjia/mrqa:0.1 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": "0xf4e87db550420061b16b1c486580b6d380896072",
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0x6438ed0246514f13bb6a39cf0e77f439",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0x6438ed0246514f13bb6a39cf0e77f439",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0x6438ed0246514f13bb6a39cf0e77f439",
+                        "parent_name": "robinjia-predictions-mrqa-bert-base-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x84b3ef7a682241e3844ba137c0555b04"
+                    }
+                ],
+                "id": "0x6438ed0246514f13bb6a39cf0e77f439",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565497478,
+                    "data_size": 4805,
+                    "description": "{\"submit_id\": \"0x028cd58d138645009f5b7da0fcb3fa78\", \"predict_id\": \"0x84b3ef7a682241e3844ba137c0555b04\", \"submitter_id\": \"20891\"}",
+                    "docker_image": "robinjia/mrqa@sha256:80aa89c641e18d02f1e6c9ca43e8e161d3d893596bf5e3430d04986c27a07bf3",
+                    "exitcode": 0,
+                    "last_updated": 1565499429,
+                    "name": "robinjia-predictions-mrqa-bert-base-results",
+                    "remote": "jagupard23.stanford.edu",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1565499369,
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ],
+                    "time": 44.7533578873
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x6438ed0246514f13bb6a39cf0e77f439"
+            },
+            "scores": {
+                "BioASQ_em": 46.44268774703557,
+                "BioASQ_f1": 60.80570827280875,
+                "BioProcess_em": 38.35616438356164,
+                "BioProcess_f1": 57.38242461287285,
+                "ComplexWebQuestions_em": 47.4,
+                "ComplexWebQuestions_f1": 55.28649388934513,
+                "DROP_em": 28.314457028647567,
+                "DROP_f1": 37.88026662208128,
+                "DuoRC.ParaphraseRC_em": 42.78110445775116,
+                "DuoRC.ParaphraseRC_f1": 53.324349355018555,
+                "MCTest_em": 54.163890739506996,
+                "MCTest_f1": 66.12470115815101,
+                "QAMR_em": 47.83464566929134,
+                "QAMR_f1": 64.8110619662146,
+                "QAST_em": 58.63636363636363,
+                "QAST_f1": 77.01775125459334,
+                "RACE_em": 28.22902796271638,
+                "RACE_f1": 39.50822255197579,
+                "RelationExtraction_em": 73.33333333333333,
+                "RelationExtraction_f1": 83.89152976652977,
+                "TREC_em": 36.72869735553379,
+                "TREC_f1": 53.96401861759138,
+                "TextbookQA_em": 44.29708222811671,
+                "TextbookQA_f1": 52.03473267522788
+            },
+            "submission": {
+                "created": 1565417344,
+                "description": "BERT base baseline (MRQA Organizers)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 2,
+                "public": false,
+                "user_name": "robinjia"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0x413d3033916c41da95f0d5e7bb791737 \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-memory 2g --request-docker-image robinjia/mrqa:0.1 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": "0x375f648dbb26003536164282a4742c6a2ad55e31",
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0xcf414611f220477eb0ac8e144b0ea99c",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0xcf414611f220477eb0ac8e144b0ea99c",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0xcf414611f220477eb0ac8e144b0ea99c",
+                        "parent_name": "monologg-predictions-bert-large-adv-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x413d3033916c41da95f0d5e7bb791737"
+                    }
+                ],
+                "id": "0xcf414611f220477eb0ac8e144b0ea99c",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565450145,
+                    "data_size": 4823,
+                    "description": "{\"submit_id\": \"0xa113983bc3fc42ff89bf3838a6177a0c\", \"predict_id\": \"0x413d3033916c41da95f0d5e7bb791737\", \"submitter_id\": \"0xd9311df5dd7b4a77a47cc706a19d33ce\"}",
+                    "docker_image": "robinjia/mrqa@sha256:80aa89c641e18d02f1e6c9ca43e8e161d3d893596bf5e3430d04986c27a07bf3",
+                    "exitcode": 0,
+                    "last_updated": 1565454346,
+                    "name": "monologg-predictions-bert-large-adv-results",
+                    "remote": "jagupard24.stanford.edu",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1565454243,
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ],
+                    "time": 96.6287491322
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xcf414611f220477eb0ac8e144b0ea99c"
+            },
+            "scores": {
+                "BioASQ_em": 45.12516469038208,
+                "BioASQ_f1": 60.53913922354001,
+                "BioProcess_em": 46.118721461187214,
+                "BioProcess_f1": 62.86951995667652,
+                "ComplexWebQuestions_em": 48.666666666666664,
+                "ComplexWebQuestions_f1": 56.923735750928635,
+                "DROP_em": 34.843437708194536,
+                "DROP_f1": 43.763411710221035,
+                "DuoRC.ParaphraseRC_em": 46.174318030605455,
+                "DuoRC.ParaphraseRC_f1": 57.25210737265047,
+                "MCTest_em": 57.16189207195203,
+                "MCTest_f1": 70.91297335369568,
+                "QAMR_em": 56.75853018372703,
+                "QAMR_f1": 71.68685325803112,
+                "QAST_em": 56.81818181818182,
+                "QAST_f1": 77.78595284301025,
+                "RACE_em": 29.56058588548602,
+                "RACE_f1": 42.784984526667444,
+                "RelationExtraction_em": 74.33333333333333,
+                "RelationExtraction_f1": 84.84972600668259,
+                "TREC_em": 42.6052889324192,
+                "TREC_f1": 58.81287020081977,
+                "TextbookQA_em": 48.80636604774536,
+                "TextbookQA_f1": 58.040461279237235
+            },
+            "submission": {
+                "created": 1564238869,
+                "description": "BERT-large + Adversarial Training (Team 42-alpha)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 2,
+                "public": true,
+                "user_name": "monologg"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0x50a6cb566d264ba89974fbdc53f0cfc1 \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-memory 2g --request-docker-image robinjia/mrqa:0.1 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": "0x3c38897987b7a336f55fe6e24db45407bbba5eaa",
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0xaa7261079fe14229a05f9b8d88e7b99b",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0xaa7261079fe14229a05f9b8d88e7b99b",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0xaa7261079fe14229a05f9b8d88e7b99b",
+                        "parent_name": "monologg-predictions-bert-base-adv-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x50a6cb566d264ba89974fbdc53f0cfc1"
+                    }
+                ],
+                "id": "0xaa7261079fe14229a05f9b8d88e7b99b",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565450157,
+                    "data_size": 4821,
+                    "description": "{\"submit_id\": \"0xc1c33a9ffbdf4f9da06658d8f94532b6\", \"predict_id\": \"0x50a6cb566d264ba89974fbdc53f0cfc1\", \"submitter_id\": \"0xd9311df5dd7b4a77a47cc706a19d33ce\"}",
+                    "docker_image": "robinjia/mrqa@sha256:80aa89c641e18d02f1e6c9ca43e8e161d3d893596bf5e3430d04986c27a07bf3",
+                    "exitcode": 0,
+                    "last_updated": 1565454780,
+                    "name": "monologg-predictions-bert-base-adv-results",
+                    "remote": "vm-clws-prod-worker-1",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1565454741,
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ],
+                    "time": 29.9134202003
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xaa7261079fe14229a05f9b8d88e7b99b"
+            },
+            "scores": {
+                "BioASQ_em": 43.34650856389987,
+                "BioASQ_f1": 60.043840953072355,
+                "BioProcess_em": 42.922374429223744,
+                "BioProcess_f1": 61.09066197697323,
+                "ComplexWebQuestions_em": 48.13333333333333,
+                "ComplexWebQuestions_f1": 56.50475575969765,
+                "DROP_em": 30.512991339107263,
+                "DROP_f1": 40.01052717939192,
+                "DuoRC.ParaphraseRC_em": 45.97471723220226,
+                "DuoRC.ParaphraseRC_f1": 57.88951309140019,
+                "MCTest_em": 55.82944703530979,
+                "MCTest_f1": 69.30476459467533,
+                "QAMR_em": 52.821522309711284,
+                "QAMR_f1": 68.78397542804323,
+                "QAST_em": 52.72727272727273,
+                "QAST_f1": 75.62895889331297,
+                "RACE_em": 26.498002663115845,
+                "RACE_f1": 39.72839665699602,
+                "RelationExtraction_em": 72.66666666666667,
+                "RelationExtraction_f1": 83.5260499848736,
+                "TREC_em": 39.079333986287956,
+                "TREC_f1": 56.79200352957893,
+                "TextbookQA_em": 45.62334217506631,
+                "TextbookQA_f1": 55.67453310584566
+            },
+            "submission": {
+                "created": 1564301739,
+                "description": "BERT-base + Adversarial Training (Team 42-alpha)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 2,
+                "public": true,
+                "user_name": "monologg"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0xd6ecd733c63942b1a75b42920ef2abf2 \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-memory 2g --request-docker-image robinjia/mrqa:0.1 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": "0x4e4e96f55834eb801eefa976ff061f74be1d7d1f",
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0xa20dfdc7714143c1872e5aa896a5183b",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0xa20dfdc7714143c1872e5aa896a5183b",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0xa20dfdc7714143c1872e5aa896a5183b",
+                        "parent_name": "reham_osama-predictions-SLQA_BERT-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xd6ecd733c63942b1a75b42920ef2abf2"
+                    }
+                ],
+                "id": "0xa20dfdc7714143c1872e5aa896a5183b",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565450135,
+                    "data_size": 4823,
+                    "description": "{\"submit_id\": \"0xb620b6836172484ea9622dbdaa1b3f4a\", \"predict_id\": \"0xd6ecd733c63942b1a75b42920ef2abf2\", \"submitter_id\": \"0x105a711850d040b887c1550c080656f5\"}",
+                    "docker_image": "robinjia/mrqa@sha256:80aa89c641e18d02f1e6c9ca43e8e161d3d893596bf5e3430d04986c27a07bf3",
+                    "exitcode": 0,
+                    "last_updated": 1565455011,
+                    "name": "reham_osama-predictions-SLQA_BERT-results",
+                    "remote": "jagupard24.stanford.edu",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1565454947,
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ],
+                    "time": 59.0020899773
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xa20dfdc7714143c1872e5aa896a5183b"
+            },
+            "scores": {
+                "BioASQ_em": 43.01712779973649,
+                "BioASQ_f1": 59.09438917821068,
+                "BioProcess_em": 44.29223744292238,
+                "BioProcess_f1": 60.82778856732374,
+                "ComplexWebQuestions_em": 41.86666666666667,
+                "ComplexWebQuestions_f1": 51.21489375601001,
+                "DROP_em": 24.383744170552966,
+                "DROP_f1": 34.77585521920981,
+                "DuoRC.ParaphraseRC_em": 38.456420492348634,
+                "DuoRC.ParaphraseRC_f1": 49.641289953967934,
+                "MCTest_em": 54.230512991339104,
+                "MCTest_f1": 67.87813962397139,
+                "QAMR_em": 47.965879265091864,
+                "QAMR_f1": 66.01308224362792,
+                "QAST_em": 50.90909090909091,
+                "QAST_f1": 75.51138321143156,
+                "RACE_em": 24.567243675099867,
+                "RACE_f1": 37.38222694047769,
+                "RelationExtraction_em": 67.86666666666666,
+                "RelationExtraction_f1": 81.29854250399538,
+                "TREC_em": 27.7179236043095,
+                "TREC_f1": 48.707384543883805,
+                "TextbookQA_em": 32.09549071618037,
+                "TextbookQA_f1": 40.485294727561815
+            },
+            "submission": {
+                "created": 1565407717,
+                "description": "\t Hierarchical attention over BERT features (Alexandria University)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "reham_osama"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0x0ab3476d41004dd697e38231a1a9c6ad \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-docker-image robinjia/mrqa:0.1 --request-memory 2g --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0x8fc4d4d8d3c748a1ba327a8ef033bfc4",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0x8fc4d4d8d3c748a1ba327a8ef033bfc4",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0x8fc4d4d8d3c748a1ba327a8ef033bfc4",
+                        "parent_name": "minbyul-predictions-position_frz_bert_base-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x0ab3476d41004dd697e38231a1a9c6ad"
+                    }
+                ],
+                "id": "0x8fc4d4d8d3c748a1ba327a8ef033bfc4",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1569870326,
+                    "description": "{\"submit_id\": \"0x57a28cd6778a4c978db110951389792d\", \"predict_id\": \"0x0ab3476d41004dd697e38231a1a9c6ad\", \"submitter_id\": \"0xaa7e64db8b2d43ea89827ff7b1fd177b\"}",
+                    "failure_message": " Parent bundles failed: 0x0ab3476d41004dd697e38231a1a9c6ad (Please use the --allow-failed-dependencies flag to depend on results fo failed or killed bundles)",
+                    "name": "minbyul-predictions-position_frz_bert_base-results",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ]
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "failed",
+                "uuid": "0x8fc4d4d8d3c748a1ba327a8ef033bfc4"
+            },
+            "scores": {
+                "BioASQ_em": null,
+                "BioASQ_f1": null,
+                "BioProcess_em": null,
+                "BioProcess_f1": null,
+                "ComplexWebQuestions_em": null,
+                "ComplexWebQuestions_f1": null,
+                "DROP_em": null,
+                "DROP_f1": null,
+                "DuoRC.ParaphraseRC_em": null,
+                "DuoRC.ParaphraseRC_f1": null,
+                "MCTest_em": null,
+                "MCTest_f1": null,
+                "QAMR_em": null,
+                "QAMR_f1": null,
+                "QAST_em": null,
+                "QAST_f1": null,
+                "RACE_em": null,
+                "RACE_f1": null,
+                "RelationExtraction_em": null,
+                "RelationExtraction_f1": null,
+                "TREC_em": null,
+                "TREC_f1": null,
+                "TextbookQA_em": null,
+                "TextbookQA_f1": null
+            },
+            "submission": {
+                "created": 1565748447,
+                "description": "pos_freeze_bert_base dmis",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "minbyul"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0x094d075a666a40929a10cfdb80196ea9 \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-docker-image robinjia/mrqa:0.1 --request-memory 2g --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0x7ff19f64b706443fbc9ddb0c68b55429",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0x7ff19f64b706443fbc9ddb0c68b55429",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0x7ff19f64b706443fbc9ddb0c68b55429",
+                        "parent_name": "denis_smirnov-predictions-bert-baseline-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x094d075a666a40929a10cfdb80196ea9"
+                    }
+                ],
+                "id": "0x7ff19f64b706443fbc9ddb0c68b55429",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565422398,
+                    "description": "{\"submit_id\": \"0x059b8bd5f76d4e9b88e9be7652fff15d\", \"predict_id\": \"0x094d075a666a40929a10cfdb80196ea9\", \"submitter_id\": \"0x31765cb9a63448cc8bfaf6157593ddf4\"}",
+                    "failure_message": " Parent bundles failed: 0x094d075a666a40929a10cfdb80196ea9 (Please use the --allow-failed-dependencies flag to depend on results fo failed or killed bundles)",
+                    "name": "denis_smirnov-predictions-bert-baseline-results",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ]
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "failed",
+                "uuid": "0x7ff19f64b706443fbc9ddb0c68b55429"
+            },
+            "scores": {
+                "BioASQ_em": null,
+                "BioASQ_f1": null,
+                "BioProcess_em": null,
+                "BioProcess_f1": null,
+                "ComplexWebQuestions_em": null,
+                "ComplexWebQuestions_f1": null,
+                "DROP_em": null,
+                "DROP_f1": null,
+                "DuoRC.ParaphraseRC_em": null,
+                "DuoRC.ParaphraseRC_f1": null,
+                "MCTest_em": null,
+                "MCTest_f1": null,
+                "QAMR_em": null,
+                "QAMR_f1": null,
+                "QAST_em": null,
+                "QAST_f1": null,
+                "RACE_em": null,
+                "RACE_f1": null,
+                "RelationExtraction_em": null,
+                "RelationExtraction_f1": null,
+                "TREC_em": null,
+                "TREC_f1": null,
+                "TextbookQA_em": null,
+                "TextbookQA_f1": null
+            },
+            "submission": {
+                "created": 1564276337,
+                "description": "BERT Baseline (Higher School of Economics)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "denis_smirnov"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run eval.py:0x658041fae3ad46629ec1911442597028 data_dir:0xd4ae20f3976440009c711afb277ff246 predictions.json:0xaddc405e15894678b5ff4800eafa4b17 \"for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done\" --request-docker-image robinjia/mrqa:0.1 --request-memory 2g --request-cpus 1",
+                "bundle_type": "run",
+                "command": "for data_file in `ls data_dir/*.jsonl`; do base=$(echo ${data_file} | cut -d '/' -f2); python3.6 eval.py ${data_file} predictions.json > eval_${base::-1}; done",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "eval.py",
+                        "child_uuid": "0x51e1f264dfc947298b45aab44e0dd9da",
+                        "parent_name": "mrqa_official_eval.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x658041fae3ad46629ec1911442597028"
+                    },
+                    {
+                        "child_path": "data_dir",
+                        "child_uuid": "0x51e1f264dfc947298b45aab44e0dd9da",
+                        "parent_name": "test_20190804_with_ans",
+                        "parent_path": "",
+                        "parent_uuid": "0xd4ae20f3976440009c711afb277ff246"
+                    },
+                    {
+                        "child_path": "predictions.json",
+                        "child_uuid": "0x51e1f264dfc947298b45aab44e0dd9da",
+                        "parent_name": "ZHO-predictions-SQuADbasedonmulti-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xaddc405e15894678b5ff4800eafa4b17"
+                    }
+                ],
+                "id": "0x51e1f264dfc947298b45aab44e0dd9da",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1565422406,
+                    "description": "{\"submit_id\": \"0xebe788d9449d416698c4e838fad37fae\", \"predict_id\": \"0xaddc405e15894678b5ff4800eafa4b17\", \"submitter_id\": \"0x3cdfa6ad7bad44758f232263d457e5d6\"}",
+                    "failure_message": " Parent bundles failed: 0xaddc405e15894678b5ff4800eafa4b17 (Please use the --allow-failed-dependencies flag to depend on results fo failed or killed bundles)",
+                    "name": "ZHO-predictions-SQuADbasedonmulti-results",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "robinjia/mrqa:0.1",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "tags": [
+                        "mrqa2019-hidden-test-eval"
+                    ]
+                },
+                "owner": {
+                    "id": "20891",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "failed",
+                "uuid": "0x51e1f264dfc947298b45aab44e0dd9da"
+            },
+            "scores": {
+                "BioASQ_em": null,
+                "BioASQ_f1": null,
+                "BioProcess_em": null,
+                "BioProcess_f1": null,
+                "ComplexWebQuestions_em": null,
+                "ComplexWebQuestions_f1": null,
+                "DROP_em": null,
+                "DROP_f1": null,
+                "DuoRC.ParaphraseRC_em": null,
+                "DuoRC.ParaphraseRC_f1": null,
+                "MCTest_em": null,
+                "MCTest_f1": null,
+                "QAMR_em": null,
+                "QAMR_f1": null,
+                "QAST_em": null,
+                "QAST_f1": null,
+                "RACE_em": null,
+                "RACE_f1": null,
+                "RelationExtraction_em": null,
+                "RelationExtraction_f1": null,
+                "TREC_em": null,
+                "TREC_f1": null,
+                "TextbookQA_em": null,
+                "TextbookQA_f1": null
+            },
+            "submission": {
+                "created": 1564355513,
+                "description": "{SQuADbasedonmulti} (BLCU)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 3,
+                "public": true,
+                "user_name": "ZHO"
+            }
+        }
+    ],
+    "updated": 1569890187.886171
+}

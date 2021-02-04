@@ -242,6 +242,10 @@ The official `predict_server.py` script (in this directory) will query this serv
 The `baseline` directory includes an example implementation in `serve.py`.
 We have chosen this format so that we can create interactive demos for all submitted models.
 
+## Results
+Codalab results for all models submitted to the shared task are available in the `results` directory.
+These files include the dev and test EM and F1 scores for every model and every dataset. 
+
 ## Citation
 
 ```
