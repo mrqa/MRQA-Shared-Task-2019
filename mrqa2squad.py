@@ -10,7 +10,8 @@ def main(config):
         header = json.loads(f.readline())
         print("Processing the file:", header)
         dir = Path(config.file).parent
-        output_file = dir / f'{header["header"]["dataset"]}-{header["header"]["split"]}.json'
+        split = header["header"]["split"] if "split" in header["header"] else header["header"]["mrqa_split"]
+        output_file = dir / f'{header["header"]["dataset"]}-{split}.json'
         print("Output will be stored in: ", output_file)
         if config.dry_run:
             return None
