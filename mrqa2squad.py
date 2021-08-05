@@ -40,8 +40,6 @@ def main(config):
                 n_qa += 1
             output["data"][0]["paragraphs"].append(paragraph)
 
-
-
     with open(output_file, 'w') as f:
         json.dump(output, f, indent=4)
     print("File is saved in:", output_file)
