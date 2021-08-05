@@ -6,12 +6,13 @@ from pathlib import Path
 
 def main(config):
     output = {}
+    qa_ids = []
     with open(config.file, "r") as f:
         header = json.loads(f.readline())
         print("Processing the file:", header)
         dir = Path(config.file).parent
         split = header["header"]["split"] if "split" in header["header"] else header["header"]["mrqa_split"]
-        output_file = dir / f'{header["header"]["dataset"]}-{split}.json'
+        output_file = dir / f'{header["header"]["dataset"]}-{split}-from-MRQA.json'
         print("Output will be stored in: ", output_file)
         if config.dry_run:
             return None
@@ -26,6 +27,7 @@ def main(config):
             paragraph["qas"] = []
             for qa in line["qas"]:
                 qa["id"] = qa["qid"]
+                qa_ids.append(qa["id"])
                 answers = []
                 for a in qa["detected_answers"]:
                     answers.append({"text": a["text"], "answer_start": a["char_spans"][0][0]})
@@ -34,13 +36,17 @@ def main(config):
                 del qa["qid"]
                 del qa["question_tokens"]
                 del qa["detected_answers"]
+                del qa["context_tokens"]
                 n_qa += 1
             output["data"][0]["paragraphs"].append(paragraph)
+
+
 
     with open(output_file, 'w') as f:
         json.dump(output, f, indent=4)
     print("File is saved in:", output_file)
-    print("The total number of QA pairs is:", n_qa)
+    print("The total number of QA pairs is:", n_qa, "(# of unique ids:", len(set(qa_ids)), ")")
+    print()
     return None
 
 
