@@ -1,6 +1,7 @@
 import json
 from tqdm import tqdm
 import argparse
+from pathlib import Path
 
 
 def main(config):
@@ -8,7 +9,8 @@ def main(config):
     with open(config.file, "r") as f:
         header = f.readline()
         print("Processing the file:", header)
-        output_file = f'{header["header"]["dataset"]}-{header["header"]["split"]}.json'
+        dir = Path(config.file).parent
+        output_file = dir / f'{header["header"]["dataset"]}-{header["header"]["split"]}.json'
         print("Output will be stored in: ", output_file)
         if config.dry_run:
             return None
