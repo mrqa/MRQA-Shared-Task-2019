@@ -36,7 +36,6 @@ def main(config):
                 del qa["qid"]
                 del qa["question_tokens"]
                 del qa["detected_answers"]
-                del qa["context_tokens"]
                 n_qa += 1
             output["data"][0]["paragraphs"].append(paragraph)
 
