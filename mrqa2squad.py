@@ -7,7 +7,7 @@ from pathlib import Path
 def main(config):
     output = {}
     with open(config.file, "r") as f:
-        header = f.readline()
+        header = json.loads(f.readline())
         print("Processing the file:", header)
         dir = Path(config.file).parent
         output_file = dir / f'{header["header"]["dataset"]}-{header["header"]["split"]}.json'
