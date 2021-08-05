@@ -25,13 +25,14 @@ def main(config):
             paragraph["qas"] = []
             for qa in line["qas"]:
                 qa["id"] = qa["qid"]
-                del qa["qid"]
-                del qa["question_tokens"]
                 answers = []
-                for a in line["detected_answers"]:
+                for a in qa["detected_answers"]:
                     answers.append({"text": a["text"], "answer_start": a["char_spans"][0][0]})
                 qa["answers"] = answers
                 paragraph["qas"].append(qa)
+                del qa["qid"]
+                del qa["question_tokens"]
+                del qa["detected_answers"]
                 n_qa += 1
             output["data"][0]["paragraphs"].append(paragraph)
 
